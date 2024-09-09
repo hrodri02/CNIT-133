@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box; 
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: black;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    padding: 10px;
+}
+
+section {
+    flex: 1;
+    overflow: auto;
+    color: #ccc;
+}
+
+#hw-list {
+    margin-left: 20px;
+}
+
+ol li {
+    color: #ccc;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000080;
+}
+
+nav a {
+    padding: 10px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.nav-active {
+    color: black;
+    background-color: #87CEEB;
+}
+
+.hw2-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hw2-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hw2-part3-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#currencies-container {
+    width: 50%;
+}
+
+#hw2-table-part3 {
+    border: 1px solid #ccc; 
+    border-collapse: collapse;
+}
+
+#hw2-table-part3 th, td {
+    border: 1px solid #ccc; 
+}
+
+#hw2-table-part3 th {
+    background-color: #555;
+    font-weight: bold;
+}
+
+#currencies-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#hw2-table-part3 td {
+    text-align: center;
+}
+
+#hw2-table-part3 input {
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    color: #ccc;
+    border: none;
+}
+
+#instructions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+div button {
+    align-self: center;
+    background-color: #555;
+    color: #ccc;
+    border: none;
+    text-decoration: none;
+    padding: 5px;
+}

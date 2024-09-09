@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Week 2 - Excercises 1">
+        <title>Excercises 1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            document.write('<h3>Excercise 1a</h3>');
+            document.write("<span style='color:orange'>A, </span>");
+            document.write("<span style='color:orange'>B, </span>");
+            document.write("<span style='color:orange'>C</span>");
+            document.write('<h3>Excercise 1b</h3>');
+            /*
+            Create a script using only document.write statements, that displays a table that 
+            has form text boxes with 3 preset employee names. Input their annual salaries. 
+            Calculate and display their salary with a $100 bonus. Display the total of all 
+            salaries and the total salaries with bonuses.
+
+            Disable the bonus fields and the total fields. Right-align the numeric fields.
+            */
+            const bonus = 100;
+
+            function calculateSumOfSalaries() {
+                const salary1 = parseFloat(document.forms["myform"].elements["salary1"].value);
+                const salary2 = parseFloat(document.forms["myform"].elements["salary2"].value);
+                const salary3 = parseFloat(document.forms["myform"].elements["salary3"].value);
+                const total = salary1 + salary2 + salary3;
+                document.forms["myform"].elements["total"].value = total;
+                document.forms["myform"].elements["salary1-bonus"].value = salary1 + bonus;
+                document.forms["myform"].elements["salary2-bonus"].value = salary2 + bonus;
+                document.forms["myform"].elements["salary3-bonus"].value = salary3 + bonus;
+                document.forms["myform"].elements["total-bonus"].value = total + 3*bonus;
+            }
+            
+            document.write('<form name="myform">');
+            document.write('<table>');
+            document.write("<tr> <td><label for='salary1'>Sally's Annual Salary:</label></td>" +
+                "<td><input type='text' name='salary1' id='salary1' size='10' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='salary2'>Bob's Annual Salary:</label></td>" +
+                "<td><input type='text' name='salary2' id='salary2' size='10' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='salary3'>Fred's Annual Salary:</label></td>" +
+                "<td><input type='text' name='salary3' id='salary3' size='10' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='total'>Total:</label></td>" +
+                "<td><input type='text' name='total' id='total' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write("<tr> <td><label for='salary1-bonus'>Sally's Annual Salary (with bonus):</label></td>" +
+                "<td><input type='text' name='salary1-bonus' id='salary1-bonus' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write("<tr> <td><label for='salary2-bonus'>Sally's Annual Salary (with bonus):</label></td>" +
+                "<td><input type='text' name='salary2-bonus' id='salary2-bonus' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write("<tr> <td><label for='salary3-bonus'>Sally's Annual Salary (with bonus):</label></td>" +
+                "<td><input type='text' name='salary3-bonus' id='salary3-bonus' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write("<tr> <td><label for='total-bonus'>Total (with bonuses):</label></td>" +
+                "<td><input type='text' name='total-bonus' id='total-bonus' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write( "</table>" );
+            document.write('<br><br>');
+            document.write('<input type="button" onclick="calculateSumOfSalaries()" value="SUBMIT">');
+            document.write('<input type="reset" value="RESET">');
+            document.write('</form>');
+
+            document.write('<h3>Excercise 2a</h3>');
+            // const numbers = [];
+            // const numberStrings = ['first', 'second', 'third', 'fourth'];
+            // let countLessThanSix = 0;
+            // let product = 1;
+            // for (let i = 0; i < numberStrings.length; i++) {
+            //     const number = parseInt( prompt( `Enter the ${numberStrings[i]} number`, "" ) );
+            //     numbers.push(number);
+            //     if (number < 6) 
+            //         countLessThanSix += 1;
+            //     product *= number;
+            // }
+            // alert(`numbers less than 6: ${countLessThanSix}\n` + 
+            //     `numbers greater than or equal to 6: ${numberStrings.length - countLessThanSix}\n` +
+            //     `product: ${product}`
+            // );
+
+            $(document).ready(function(){
+                $('#fade-out-btn').click(function() {
+                    $("#ex2-results").fadeToggle("slow");
+                });
+            });
+
+            function calculateEx2b() {
+                const numberStrings = ['number1', 'number2', 'number3', 'number4'];
+                const numbers = [];
+                let less = 0;
+                let product = 1;
+                for (i in numberStrings) {
+                    const number = parseInt(document.forms["ex2b-form"].elements[numberStrings[i]].value);
+                    if (number < 6) {
+                        less += 1;
+                    }
+                    product *= number;
+                }
+                document.forms["ex2b-form"].elements["result"].value = (
+                    `Numbers less than 6: ${less}\n` +
+                    `Numbers greater than or equal to 6: ${numberStrings.length - less}\n` +
+                    `Product: ${product}`
+                );
+            }
+
+            document.write('<h3>Excercise 2b and 2c</h3>');
+            document.write('<form name="ex2b-form">');
+            document.write('<table>');
+            document.write("<tr> <td><label for='number1'>Enter the first number:</label></td>" +
+                "<td><input type='number' name='number1' id='number1' size='10' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='number2'>Enter the second number:</label></td>" +
+                "<td><input type='number' name='number2' id='number2' size='10' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='number3'>Enter the third number:</label></td>" +
+                "<td><input type='number' name='number3' id='number3' size='10' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='number4'>Enter the fourth number:</label></td>" +
+                "<td><input type='number' name='number4' id='number4' size='10' style='text-align:right;'></td></tr>");
+            document.write( "</table>" );
+            document.write('<br>Results<br>');
+            document.write('<textarea rows="3" cols="40" name="result" id="ex2-results"></textarea>')    
+            document.write('<br><br>');
+            document.write('<input type="button" onclick="calculateEx2b()" value="SUBMIT">');
+            document.write('<button type="button" id="fade-out-btn">Click to Fade Results</button>');
+            document.write('<input type="reset" value="RESET">');
+            document.write('</form>');
+
+            function calculateEx3Results() {
+                const number1 = parseInt(document.forms['ex3-form'].elements['number1'].value);
+                const number2 = parseInt(document.forms['ex3-form'].elements['number2'].value);
+                document.forms['ex3-form'].elements['results'].value = number1 + number2;
+                const diff = number1 - number2;
+                if (diff == 0)
+                    alert(`${number1} is equal to ${number2}`);
+                else if (diff < 0)
+                    alert(`${number1} is less than to ${number2}`);
+                else
+                    alert(`${number1} is greater than to ${number2}`);
+            }
+
+            document.write('<h3>Excercise 3</h3>');
+            document.write('<form name="ex3-form">');
+            document.write('<table>');
+            document.write("<tr> <td><label for='number1'>Enter the first number:</label></td>" +
+                "<td><input type='number' name='number1' id='number1' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='number2'>Enter the second number:</label></td>" +
+                "<td><input type='number' name='number2' id='number2' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='results'>sum:</label></td>" +
+                "<td><input type='number' name='results' id='results' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write('</table>');
+            document.write('<br><br>');
+            document.write('<input type="button" onclick="calculateEx3Results()" value="SUBMIT">');
+            document.write('<input type="reset" value="RESET">');
+            document.write('</form>');
+
+            document.write('<h3>Excercise 4</h3>');
+            document.write( "<table style='border: 1px solid black;'><tr> " + "<th style='border: 1px solid black;'>Number</th> <th style='border: 1px solid black;'>Square root</th></tr>" );
+            document.write( "<tr style='text-align:right;'><td style='border: 1px solid black;'>" + 4 + "</td>" + "<td style='border: 1px solid black;'>" + Math.sqrt(4) + "</td></tr>" );
+            document.write( "<tr style='text-align:right;'><td style='border: 1px solid black;'>" + 9 + "</td>" + "<td style='border: 1px solid black;'>" + Math.abs(9) + "</td></tr>" );
+            document.write( "<tr style='text-align:right;'><td style='border: 1px solid black;'>" + 16 + "</td>" + "<td style='border: 1px solid black;'>" + Math.abs(16) + "</td></tr>" );
+            document.write( "<tr style='text-align:right;'><td style='border: 1px solid black;'>" + 25 + "</td>" + "<td style='border: 1px solid black;'>" + Math.abs(25) + "</td></tr>" );
+            document.write('</table>');
+
+            function calculateEx5Results() {
+                const hours1 = parseFloat(document.forms['ex5-form'].elements['number1'].value);
+                if (isNaN(hours1))
+                    alert('Inputs must be numbers');
+                const hours2 = parseFloat(document.forms['ex5-form'].elements['number2'].value);
+                if (isNaN(hours2))
+                    alert('Inputs must be numbers');
+                document.forms['ex5-form'].elements['result'].value = (1/(1/hours1 + 1/hours2)).toFixed(2);
+            }
+
+            document.write('<h3>Excercise 5</h3>');
+            document.write('<form name="ex5-form">');
+            document.write('<table>');
+            document.write("<tr> <td><label for='number1'>Enter the first number:</label></td>" +
+                "<td><input type='text' name='number1' id='number1' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='number2'>Enter the second number:</label></td>" +
+                "<td><input type='text' name='number2' id='number2' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='result'>Total:</label></td>" +
+                "<td><input type='number' name='result' id='result' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write('</table>');
+            document.write('<br><br>');
+            document.write('<input type="button" onclick="calculateEx5Results()" value="SUBMIT">');
+            document.write('<input type="reset" value="RESET">');
+            document.write('</form>');
+            
+            $(document).ready(function() {
+                $("#ex6-form input:first").focus();
+
+                $("#ex6-form button").click(function() {
+                    const num1 = parseFloat($('#ex6-form #number1').val());
+                    const num2 = parseFloat($('#ex6-form #number2').val());
+                    $('#avg').val((num1 + num2)/2);
+                    $('#ex6-form #product').val(num1 * num2);
+                });
+            });
+
+            document.write('<h3>Excercise 6</h3>');
+            document.write('<form id="ex6-form">');
+            document.write('<table>');
+            document.write("<tr> <td><label for='number1'>First number:</label></td>" +
+                "<td><input type='number' name='number1' id='number1' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='number2'>Second number:</label></td>" +
+                "<td><input type='number' name='number2' id='number2' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='avg'>Average:</label></td>" +
+                "<td><input type='number' name='avg' id='avg' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write("<tr> <td><label for='product'>Product:</label></td>" +
+                "<td><input type='number' name='product' id='product' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write('</table>');
+            document.write('<br><br>');
+            document.write('<button type="button">Submit</button>');
+            document.write('<input type="reset" value="RESET">');
+            document.write('</form>');
+
+            $(document).ready(function() {
+                $("#ex7-form button").click(function() {
+                    const num1 = parseFloat($('#ex7-form #number1').val());
+                    const num2 = parseFloat($('#ex7-form #number2').val());
+                    $('#multiple').val(num1 % num2 === 0);
+                });
+            });
+
+            document.write('<h3>Excercise 7</h3>');
+            document.write('<form id="ex7-form">');
+            document.write('<table>');
+            document.write("<tr> <td><label for='number1'>First number:</label></td>" +
+                "<td><input type='number' name='number1' id='number1' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='number2'>Second number:</label></td>" +
+                "<td><input type='number' name='number2' id='number2' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='multiple'>Is first number a multiple of the second:</label></td>" +
+                "<td><input type='text' name='multiple' id='multiple' size='10' style='text-align:right;' readonly></td></tr>");
+            document.write('</table>');
+            document.write('<br><br>');
+            document.write('<button type="button">Submit</button>');
+            document.write('<input type="reset" value="RESET">');
+            document.write('</form>');
+
+            $(document).ready(function() {
+                $("#ex8-form button").click(function() {
+                    const name = $('#ex8-form #name').val();
+                    const income = parseFloat($('#income').val());
+                    if (isNaN(income)) {
+                        alert('Yearly gross income must be a number.');
+                    }
+                    let result = 'wealthy';
+                    if (income < 20000) {
+                        result = 'poor';
+                    }
+                    else if (income >= 20000 && income < 50000)
+                        result = 'lower middle';
+                    else if (income < 100000)
+                        result = 'upper middle';
+                    $('#ex8-form #result').val(`${name} you are ${result}.`);
+                });
+            });
+
+            document.write('<h3>Excercise 8</h3>');
+            document.write('<form id="ex8-form">');
+            document.write('<table>');
+            document.write("<tr> <td><label for='name'>Name:</label></td>" +
+                "<td><input type='text' name='name' id='name' size='10' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='income'>Yearly gross income:</label></td>" +
+                "<td><input type='number' name='income' id='income' size='10' value='0' style='text-align:right;'></td></tr>");
+            document.write("<tr> <td><label for='result'>Salary comment:</label></td>" +
+                "<td><input type='text' name='result' id='result' size='50' readonly></td></tr>");
+            document.write('</table>');
+            document.write('<br><br>');
+            document.write('<button type="button">Submit</button>');
+            document.write('<input type="reset" value="RESET">');
+            document.write('</form>');
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

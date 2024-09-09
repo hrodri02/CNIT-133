@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Javascript  HW 2 part 1">
+        <title>CNIT 133 HW2</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#fade-btn").click(function() {
+                    $('textarea').fadeTo('slow', 0.25);
+                });
+
+                $("#calculateHW2Part2Results").click(function() {
+                    $('textarea').fadeTo('slow', 1);
+                    const n = 3;
+                    let sum = 0;
+                    let product = 1;
+                    let smallest = Number.MAX_VALUE;
+                    let largest = Number.MIN_VALUE;
+                    for (let i = 1; i <= n; i++) {
+                        const num = parseFloat(document.forms['myform'].elements['num' + i].value);
+                        if (isNaN(num) || !Number.isInteger(num)) {
+                            document.forms['myform'].elements['result'].value = 'All the inputs must be integers!';
+                            return;
+                        }
+                        sum += num;
+                        product *= num;
+                        smallest = Math.min(smallest, num);
+                        largest = Math.max(largest, num);
+                    }
+                    let avg = sum / n;
+                    document.forms['myform'].elements['result'].value = 
+                        `Sum: ${sum.toFixed(2)}\n` +
+                        `Product: ${product.toFixed(2)}\n` +
+                        `Average: ${avg.toFixed(2)}\n` +
+                        `Smallest: ${smallest}\n` +
+                        `Largest: ${largest}`;
+                });
+
+                const currentPath = window.location.pathname;
+                const parts = currentPath.split('/');
+                const currentPage = parts[parts.length - 1];
+                $("nav").children('a').each(function () {
+                    // Check if the href attribute matches the current path
+                    if ($(this).attr('href') === currentPage) {
+                        $(this).addClass('nav-active'); // Add the 'active' class
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>CNIT 133 Homework 2 - Basic Operations</h2>
+        </header>
+        <nav>
+            <a href="hw1.html">HW list</a>
+            <a href="hw2.html">Home</a>
+            <a href="hw2-part1.html">Part 1</a>
+            <a href="hw2-part2.html">Part 2</a>
+            <a href="hw2-part3.html">Part 3</a>
+        </nav>
+        <section id="hw2-section">
+            <h3>Calculate Sum, Average, Product, Min, and Max of Three Integers</h3>
+            <form name="myform">
+                <table>
+                    <tr>
+                        <td><label for='num1'>First integer:</label></td>
+                        <td><input type="number" name="num1" id="num1" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='num2'>Second integer:</label></td>
+                        <td><input type="number" name="num2" id="num2" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='num3'>Third integer:</label></td>
+                        <td><input type="number" name="num3" id="num3" value="0" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br>
+                <br>Results<br>
+                <textarea rows="5" cols="40" name="result" id="result"></textarea>
+                <br><br>
+                <input type="button" id="calculateHW2Part2Results" value="SUBMIT">
+                <button type="button" id="fade-btn">FADE</button>
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <footer>
+        </footer>
+    </body>
+</html>
