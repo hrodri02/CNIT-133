@@ -22,7 +22,7 @@
                     let largest = Number.MIN_VALUE;
                     for (let i = 1; i <= n; i++) {
                         const num = parseFloat(document.forms['myform'].elements['num' + i].value);
-                        if (isNaN(num) || !Number.isInteger(num)) {
+                        if (Number.isNaN(num) || !Number.isInteger(num)) {
                             document.forms['myform'].elements['result'].value = 'All the inputs must be integers!';
                             return;
                         }
