@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Javascript  HW 2 part 1">
+        <title>CNIT 133 - Distance Formula</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#calculateDistance").click(function() {
+                    const x1 = parseFloat(document.forms["myform"].elements["x1"].value);
+                    const y1 = parseFloat(document.forms["myform"].elements["y1"].value);
+                    const x2 = parseFloat(document.forms["myform"].elements["x2"].value);
+                    const y2 = parseFloat(document.forms["myform"].elements["y2"].value);
+                    const dist = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+                    document.forms["myform"].elements["result"].value = dist.toFixed(2);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>CNIT 133 Short Exercises - Problem 1</h2>
+        </header>
+        <section>
+            <h3>Calculate the Distance Between Two Points</h3>
+            <form name="myform">
+                <table>
+                    <tr>
+                        <td><label for='x1'>x1:</label></td>
+                        <td><input type="number" name="x1" id="x1" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='y1'>y1:</label></td>
+                        <td><input type="number" name="y1" id="y1" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='x2'>x2:</label></td>
+                        <td><input type="number" name="x2" id="x2" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='y2'>y2:</label></td>
+                        <td><input type="number" name="y2" id="y2" value="0" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br>
+                <br>Results<br>
+                <textarea rows="5" cols="40" name="result" id="result"></textarea>
+                <br><br>
+                <input type="button" id="calculateDistance" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <footer>
+        </footer>
+    </body>
+</html>

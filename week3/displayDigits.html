@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Javascript  HW 2 part 1">
+        <title>CNIT 133 - Display Digits</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#displayDigits").click(function() {
+                    const num = parseInt(document.forms["myform"].elements["integer"].value);
+                    console.log(num);
+                    const digits = getDigits(num);
+                    console.log(digits);
+                    document.forms["myform"].elements["result"].value = digits;
+                });
+
+                function getDigits(num) {
+                    let digits = "";
+                    while (num > 0) {
+                        const digit = num % 10;
+                        digits = digit + " " + digits;
+                        num = Math.floor(num / 10);
+                    }
+                    return digits;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>CNIT 133 Short Exercises - Problem 5</h2>
+        </header>
+        <section>
+            <h3>Display the Digits of an Integer Between 1 and 99999</h3>
+            <form name="myform">
+                <table>
+                    <tr>
+                        <td><label for='integer'>Enter an Integer:</label></td>
+                        <td><input type="number" name="integer" id="integer" value="0" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br>
+                <br>Results<br>
+                <textarea rows="5" cols="40" name="result" id="result"></textarea>
+                <br><br>
+                <input type="button" id="displayDigits" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <footer>
+        </footer>
+    </body>
+</html>
