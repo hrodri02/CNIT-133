@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+<meta charset="utf-8">
+<meta name="description" content="using a jQuery plugin to validate - more tests">
+<title>Validation with jQuery more details</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- the following script is needed for jquery validation of input -->
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+
+<script>
+
+
+/* JQuery for validation
+displays error message if form input is not a number
+*/
+
+$(document).ready(function(){
+    $("#myform").validate({
+	  // Rules for each input item
+	  rules: 
+	  {
+		num: { required: true, number: true, min: 0, max: 10},
+		fname: { required: true }
+       
+	  }
+	});	  
+});
+
+
+function process() {
+if ($("#myform").valid()) {
+
+  // define variables	
+
+  var numb;
+  var firstname;
+
+  // get input number value from form using getElementById
+     
+     numb = document.getElementById("num").value;
+	 firstname = document.getElementById("fname").value;
+     document.forms["myform"].elements["comment"].value =  ( "Thanks, " + firstname + ", the number " + numb + "  is a number between 0 and 10" );
+ 
+  }
+
+  }
+</script>
+
+<style>
+
+body {
+	margin:50px 0px; padding:0px;
+	text-align:center;
+        background-color:#f5f5dc;
+	}
+	
+.body {
+	width:500px;
+	margin: 0px auto;
+	text-align:left;
+	padding:10px;
+	background-color: #dcd7d0;
+	}
+        
+/* .n { color: red; font-style: italic; } */
+.error { 
+    display: block;
+    font: normal 14px arial; 
+    padding: 3px; 
+    margin: 3px; 
+    color: blue; 
+    background-color: #ffc; 
+}
+</style>
+
+</head>
+<body>
+
+<section class="body">
+
+<h2>Check for Numeric Input between 0 and 10</h2>
+
+<form id="myform" name="myform">
+
+<label for="num">Enter input: </label><p class="n"><input type="text" id="num" name="num" size="10" autofocus><br>
+</p>
+<label for="fname">Type first name: </label><p class="n"><input type="text" id="fname" name="fname" size="10"><br>
+</p>
+
+<input type="button"  onclick="process()" value="SUBMIT">
+<input type="reset" value="RESET" onClick="window.location.reload();"><br><br>
+
+Comment: <input type="text" readonly name="comment" size="55">
+
+
+</form>
+
+
+</section>
+
+</body>
+</html
