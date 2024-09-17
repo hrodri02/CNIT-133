@@ -12,6 +12,10 @@
                 return length * width;
             }
 
+            function calculateBMI(weight, height) {
+                return (weight * 703) / (height * height);
+            }
+
             $(document).ready(function() {
                 $("#calculateArea").click(function() {
                     const length = parseFloat(document.forms['ex1-form'].elements['len'].value);
@@ -38,6 +42,18 @@
                         document.getElementById('ex1a-result').innerHTML = `
                             <p>${area.toFixed(2)}</p>
                         `;
+                    }
+                });
+                
+                $("#calculateBMI").click(function() {
+                    const weight = parseFloat(document.forms['ex2-form'].elements['weight'].value);
+                    const height = parseFloat(document.forms['ex2-form'].elements['height'].value);
+                    if (Number.isNaN(weight) || Number.isNaN(height) || height <= 0 || weight <= 0) {
+                        alert('Error: inputs must be numbers greater than 0.');
+                    }
+                    else {
+                        const bmi = calculateBMI(weight, height);
+                        document.forms['ex2-form'].elements['bmi'].value = bmi.toFixed(2);
                     }
                 });
             });
@@ -85,6 +101,44 @@
                 <br>Results<br>
                 <div name="result" id="ex1a-result"></div>
                 <br><br>
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <section>
+            <h3>Exercise 2</h3>
+            <form name="ex2-form">
+                <table>
+                    <tr>
+                        <td><label for='weight'>weight [lbs]:</label></td>
+                        <td><input type="number" name="weight" id="weight" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='height'>height [in]:</label></td>
+                        <td><input type="number" name="height" id="height" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr></tr>
+                        <td><label for='bmi'>BMI:</label></td>
+                        <td><input type="number" name="bmi" id="bmi" style='text-align:right;' readonly></td>
+                    </tr>
+                </table>
+                <br><br>
+                <input type="button" id="calculateBMI" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <section>
+            <h3>Exercise 3</h3>
+            <form name="ex3-form">
+                <table>
+                    <tr>
+                        <td><label for='hourly-rate'>Hourly Rate [$]:</label></td>
+                        <td><input type="number" name="hourly-rate" id="hourly-rate" value="0" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br>Results<br>
+                    <div name="result" id="ex3-result"></div>
+                <br><br>
+                <input type="button" id="calculatePosition" value="SUBMIT">
                 <input type="reset" value="RESET">
             </form>
         </section>
