@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Javascript Week 3 Coding Exercises">
+        <title>CNIT 133</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#calculateArea").click(function() {
+                    const length = parseFloat(document.forms['ex1-form'].elements['len'].value);
+                    const width = parseFloat(document.forms['ex1-form'].elements['width'].value);
+                    if (Number.isNaN(length) || Number.isNaN(width)) {
+                        document.forms['ex1-form'].elements['result'].value = 'Error: inputs must be numbers.';
+                    }
+                    else {
+                        const area = length * width;
+                        document.forms['ex1-form'].elements['result'].value = area.toFixed(2);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>Week 3 Coding Exercises</h2>
+        </header>
+        <section>
+            <h3>Exercise 1</h3>
+            <form name="ex1-form">
+                <table>
+                    <tr>
+                        <td><label for='len'>length:</label></td>
+                        <td><input type="number" name="len" id="len" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='width'>width:</label></td>
+                        <td><input type="number" name="width" id="width" value="0" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br>
+                <br>Results<br>
+                <textarea rows="5" cols="40" name="result" id="result"></textarea>
+                <br><br>
+                <input type="button" id="calculateArea" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <footer>
+        </footer>
+    </body>
+</html>
