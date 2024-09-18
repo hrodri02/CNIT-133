@@ -16,6 +16,17 @@
                 return (weight * 703) / (height * height);
             }
 
+            function calculatePosition(hourlyRate) {
+                if (hourlyRate >= 10 && hourlyRate <= 19)
+                    return "Position is Web Trainee";
+                else if (hourlyRate >= 20 && hourlyRate <= 49)
+                    return "Position is Web Designer";
+                else if (hourlyRate >= 50 && hourlyRate <= 75)
+                    return "Position is Web Programmer";
+                else
+                    return "Invalid Input";
+            }
+
             $(document).ready(function() {
                 $("#calculateArea").click(function() {
                     const length = parseFloat(document.forms['ex1-form'].elements['len'].value);
@@ -54,6 +65,21 @@
                     else {
                         const bmi = calculateBMI(weight, height);
                         document.forms['ex2-form'].elements['bmi'].value = bmi.toFixed(2);
+                    }
+                });
+
+                $("#calculatePosition").click(function() {
+                    const hourlyRate = parseFloat(document.forms['ex3-form'].elements['hourly-rate'].value);
+                    if (Number.isNaN(hourlyRate)) {
+                        document.getElementById('ex3-result').innerHTML = `
+                            <p class="error">Error: hourly rate must be a number.</p>
+                        `;
+                    }
+                    else {
+                        const position = calculatePosition(hourlyRate);
+                        document.getElementById('ex3-result').innerHTML = `
+                            <p>${position}</p>
+                        `;
                     }
                 });
             });
