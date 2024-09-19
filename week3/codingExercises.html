@@ -61,6 +61,12 @@
                         return 'A';
                 }
             }
+            
+            // false tails, true heads
+            function tossCoin() {
+                const res = Math.floor(Math.random()*2);
+                return res === 1;
+            }
 
             $(document).ready(function() {
                 $("#gpa").tooltip({
@@ -166,6 +172,18 @@
                         document.getElementById('ex5-result').innerHTML = `
                             <p>${letterGrade}</p>
                         `;
+                    }
+                });
+            
+                $("#tossCoin").click(function() {
+                    const isHead = tossCoin();
+                    if (isHead) {
+                        const heads = parseInt(document.forms["ex6a-form"].elements["heads"].value);
+                        document.forms["ex6a-form"].elements["heads"].value = (heads + 1);
+                    }
+                    else {
+                        const tails = parseInt(document.forms["ex6a-form"].elements["tails"].value);
+                        document.forms["ex6a-form"].elements["tails"].value = (tails + 1);
                     }
                 });
             });
@@ -291,6 +309,24 @@
                     <div name="result" id="ex5-result"></div>
                 <br><br>
                 <input type="button" id="calculateFinalGrade" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <section>
+            <h3>Exercise 6a</h3>
+            <form name="ex6a-form">
+                <table>
+                    <tr>
+                        <td><label for='heads'>Number of heads:</label></td>
+                        <td><input type="number" name="heads" id="heads" value="0" style='text-align:right;' readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for='tails'>Number of tails:</label></td>
+                        <td><input type="number" name="tails" id="tails" value="0" style='text-align:right;' readonly></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="button" id="tossCoin" value="Toss Coin">
                 <input type="reset" value="RESET">
             </form>
         </section>
