@@ -51,7 +51,7 @@
                     const finalGrade = calculateFinalGrade(hwAvg, midterm, finalExam, participation);
                     const letterGrade = getLetterGrade(finalGrade);
                     textarea.value = `Final Average: ${finalGrade}\nFinal Letter Grade: ${letterGrade}`;
-                    if (letterGrade === "D" || letterGrade === "F")
+                    if (didFailClass(letterGrade))
                         textarea.value += "\nStudent must retake the course.";
                 });
             });
@@ -77,6 +77,10 @@
                     default:
                         return 'A';
                 }
+            }
+
+            function didFailClass(letterGrade) {
+                return letterGrade === "D" || letterGrade === "F";
             }
         </script>
     </head>
