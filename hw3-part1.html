@@ -34,6 +34,34 @@
             <a href="hw3-part2.html">Part 2</a>
             <a href="hw3-part3.html">Part 3</a>
         </nav>
+        <section id="hw3-section">
+            <h3>Calculate a Student's Grade</h3>
+            <form name="myform">
+                <table>
+                    <tr>
+                        <td><label for='hwAvg'>Homework Average</label></td>
+                        <td><input type="number" name="hwAvg" id="hwAvg" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='midterm'>Midterm Grade</label></td>
+                        <td><input type="number" name="midterm" id="midterm" value="0" style='text-align:right;' title="We ask for your Grade Point Average only for statistical purposes."></td>
+                    </tr>
+                    <tr>
+                        <td><label for='finalExam'>Final Exam Grade</label></td>
+                        <td><input type="number" name="finalExam" id="finalExam" value="0" style='text-align:right;'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='participation'>Participation Grade</label></td>
+                        <td><input type="number" name="participation" id="participation" value="0" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br><label>Results</label><br>
+                    <textarea name="result" id="result"></textarea>
+                <br><br>
+                <input type="button" id="calculateFinalGrade" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
+        </section>
         <script>
         </script>
     </body>
