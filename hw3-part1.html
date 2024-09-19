@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Javascript HW 3 part 1">
+        <title>CNIT 133 HW2</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // update the selected page in the nav bar
+                const currentPath = window.location.pathname;
+                const parts = currentPath.split('/');
+                const currentPage = parts[parts.length - 1];
+                // Iterate over each <a> tag 
+                $("nav").children('a').each(function () {
+                    // Check if the href attribute matches the current path
+                    if ($(this).attr('href') === currentPage) {
+                        $(this).addClass('nav-active'); // Add the 'active' class
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>CNIT 133 Homework 3 - Functions</h2>
+        </header>
+        <nav>
+            <a href="hw1.html">HW list</a>
+            <a href="hw3.html">Home</a>
+            <a href="hw3-part1.html">Part 1</a>
+            <a href="hw3-part2.html">Part 2</a>
+            <a href="hw3-part3.html">Part 3</a>
+        </nav>
+        <script>
+        </script>
+    </body>
+</html>
