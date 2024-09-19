@@ -20,7 +20,64 @@
                         $(this).addClass('nav-active'); // Add the 'active' class
                     }
                 });
+
+                $("#calculateFinalGrade").click(function() {
+                    const textarea = document.forms["myform"].elements["result"];
+
+                    const hwAvg = parseInt(document.forms["myform"].elements["hwAvg"].value);
+                    if (!isIntegerBetweenZeroAndOneHundred(hwAvg)) {
+                        textarea.value = "Error: homework average must be an integer between 0 and 100.";
+                        return;
+                    }
+
+                    const midterm = parseInt(document.forms["myform"].elements["midterm"].value);
+                    if (!isIntegerBetweenZeroAndOneHundred(midterm)) {
+                        textarea.value = "Error: midterm grade must be an integer between 0 and 100.";
+                        return;
+                    }
+
+                    const finalExam = parseInt(document.forms["myform"].elements["finalExam"].value);
+                    if (!isIntegerBetweenZeroAndOneHundred(finalExam)) {
+                        textarea.value = "Error: final exam grade must be an integer between 0 and 100.";
+                        return;
+                    }
+
+                    const participation = parseInt(document.forms["myform"].elements["participation"].value);
+                    if (!isIntegerBetweenZeroAndOneHundred(participation)) {
+                        textarea.value = "Error: participation grade must be an integer between 0 and 100.";
+                        return;
+                    }
+
+                    const finalGrade = calculateFinalGrade(hwAvg, midterm, finalExam, participation);
+                    const letterGrade = getLetterGrade(finalGrade);
+                    textarea.value = `Final Average: ${finalGrade}\nFinal Letter Grade: ${letterGrade}`;
+                    if (letterGrade === "D" || letterGrade === "F")
+                        textarea.value += "\nYou need to retake the class!";
+                });
             });
+
+            function isIntegerBetweenZeroAndOneHundred(num) {
+                return !Number.isNaN(num) && num >= 0 && num <= 100;
+            }
+
+            function calculateFinalGrade(hwAvg, midterm, finalExam, participation) {
+                return Math.round((.5 * hwAvg) + (.2 * midterm) + (.2 * finalExam) + (.1 * participation));
+            }
+
+            function getLetterGrade(grade) {
+                switch (true) {
+                    case grade < 60:
+                        return 'F';
+                    case grade < 70:
+                        return 'D';
+                    case grade < 80:
+                        return 'C';
+                    case grade < 90:
+                        return 'B';
+                    default:
+                        return 'A';
+                }
+            }
         </script>
     </head>
     <body>
@@ -56,7 +113,7 @@
                     </tr>
                 </table>
                 <br><label>Results</label><br>
-                    <textarea name="result" id="result"></textarea>
+                <textarea rows="3" cols="40" name="result" id="result"></textarea>
                 <br><br>
                 <input type="button" id="calculateFinalGrade" value="SUBMIT">
                 <input type="reset" value="RESET">
