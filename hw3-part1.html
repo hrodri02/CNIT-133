@@ -7,21 +7,7 @@
         <title>CNIT 133 HW2</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                // update the selected page in the nav bar
-                const currentPath = window.location.pathname;
-                const parts = currentPath.split('/');
-                const currentPage = parts[parts.length - 1];
-                // Iterate over each <a> tag 
-                $("nav").children('a').each(function () {
-                    // Check if the href attribute matches the current path
-                    if ($(this).attr('href') === currentPage) {
-                        $(this).addClass('nav-active'); // Add the 'active' class
-                    }
-                });
-            });
-        </script>
+        <script src="hw3-part1.js"></script>
     </head>
     <body>
         <header>
@@ -56,7 +42,7 @@
                     </tr>
                 </table>
                 <br><label>Results</label><br>
-                    <textarea name="result" id="result"></textarea>
+                <textarea rows="3" cols="40" name="result" id="result"></textarea>
                 <br><br>
                 <input type="button" id="calculateFinalGrade" value="SUBMIT">
                 <input type="reset" value="RESET">
