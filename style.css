@@ -59,7 +59,7 @@ nav a {
     align-items: center;
 }
 
-#hw2-section, #hw3-section {
+#hw2-section, #hw3-section, .hw3-part2-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,6 +102,9 @@ nav a {
 
 #hw2-table-part3 input {
     text-align: center;
+}
+
+.full-width-black-input {
     width: 100%;
     background-color: black;
     color: #ccc;
@@ -123,4 +126,13 @@ div button {
     border: none;
     text-decoration: none;
     padding: 5px;
+}
+
+.hw3-part2-table input {
+    text-align: right;
+}
+
+.row-flex-direction {
+    display: flex;
+    flex-grow: 1;
 }
