@@ -21,6 +21,7 @@ $(document).ready(function() {
                 amounts.push(amount);
             }
             validateItemAmounts(amounts);
+            displayResults(amounts);
         }
         catch(error) {
             displayErrorMessage(error.message);
@@ -37,6 +38,24 @@ $(document).ready(function() {
             if (Number.isNaN(amount) || amount < 0)
                 throw new Error("The item amounts need to be a whole number.");
         }
+    }
+
+    function displayResults(amounts) {
+        const costs = [20.99, 12.75, 9.95, 35.89];
+        let totalAmountSold = 0;
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById(`item${i}-amount`).value = amounts[i - 1];
+            const amountSold = amounts[i - 1] * costs[i - 1];
+            totalAmountSold += amountSold;
+            document.getElementById(`item${i}-amount-sold`).value = amountSold.toFixed(2);
+        }
+        document.getElementById("total-amount-sold").value = totalAmountSold.toFixed(2);
+        const totalWeeklyEarnings = calculateTotalWeeklyEarnings(totalAmountSold);
+        document.getElementById("total-weekly-earnings").value = totalWeeklyEarnings.toFixed(2);
+    }
+
+    function calculateTotalWeeklyEarnings(totalAmountSold) {
+        return totalAmountSold * 0.09 + 250;
     }
 
     function displayErrorMessage(msg) {
