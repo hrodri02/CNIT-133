@@ -17,34 +17,31 @@ $(document).ready(function() {
         const finalExam = parseInt(document.forms["myform"].elements["finalExam"].value);
         const participation = parseInt(document.forms["myform"].elements["participation"].value);
         
-        const err_msg = validateInputs(hwAvg, midterm, finalExam, participation);
-        
         const textarea = document.forms["myform"].elements["result"];
-        if (err_msg) {
-            displayErrorMessage(textarea, err_msg);
-        }
-        else {
+        try {
+            validateInputs(hwAvg, midterm, finalExam, participation);
             const finalGrade = calculateFinalGrade(hwAvg, midterm, finalExam, participation);
             const letterGrade = getLetterGrade(finalGrade);
             displayResults(textarea, finalGrade, letterGrade);
+        }
+        catch (error) {
+            displayErrorMessage(textarea, error.message);
         }
     });
 });
 
 function validateInputs(hwAvg, midterm, finalExam, participation) {
     if (!isIntegerBetweenZeroAndOneHundred(hwAvg))
-        return "Error: homework average must be an integer between 0 and 100.";
+        throw Error("Error: homework average must be an integer between 0 and 100.");
 
     if (!isIntegerBetweenZeroAndOneHundred(midterm))
-        return "Error: midterm grade must be an integer between 0 and 100.";
+        throw Error("Error: midterm grade must be an integer between 0 and 100.");
 
     if (!isIntegerBetweenZeroAndOneHundred(finalExam))
-        return "Error: final exam grade must be an integer between 0 and 100.";
+        throw Error("Error: final exam grade must be an integer between 0 and 100.");
 
     if (!isIntegerBetweenZeroAndOneHundred(participation))
-        return "Error: participation grade must be an integer between 0 and 100.";
-
-    return null;
+        throw Error("Error: participation grade must be an integer between 0 and 100.");
 }
 
 function isIntegerBetweenZeroAndOneHundred(num) {
