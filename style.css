@@ -131,3 +131,8 @@ div button {
 #hw3-part2-table input {
     text-align: right;
 }
+
+.row-flex-direction {
+    display: flex;
+    flex-grow: 1;
+}
