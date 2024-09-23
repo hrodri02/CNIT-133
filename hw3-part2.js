@@ -22,33 +22,55 @@ $(document).ready(function() {
         document.getElementById("total-weekly-earnings").value = "";
     });
 
-    $("#calculateAmountSold").click(function() {
-        try {
-            const name = document.forms["myform"].elements["sellers-name"].value;
-            validateName(name);
-            const amounts = [];
-            for (let i = 1; i <= 4; i++) {
-                const amount = parseInt(document.forms["myform"].elements[`item-${i}`].value);
-                amounts.push(amount);
-            }
-            validateItemAmounts(amounts);
-            displayResults(amounts);
-        }
-        catch(error) {
-            displayErrorMessage(error.message);
+    $("#myform").validate({
+        rules: {
+            "sellers-name": {required: true, minlength: 2},
+            "item-1": {required: true, number: true, min: 0, step: 1},
+            "item-2": {required: true, number: true, min: 0, step: 1},
+            "item-3": {required: true, number: true, min: 0, step: 1}
+        },
+        messages: {
+            "sellers-name": {
+                required: "Please enter your name",
+                minlength: "Name must be at least 2 characters"
+            },
+            "item-1": {
+                required: "Please enter the amount sold",
+                number: "The amount must be a whole number",
+                min: "The amount must be a whole number",
+                step: "The amount must be a whole number"
+            },
+            "item-2": {
+                required: "Please enter the amount sold",
+                number: "The amount must be a whole number",
+                min: "The amount must be a whole number",
+                step: "The amount must be a whole number"
+            },
+            "item-3": {
+                required: "Please enter the amount sold",
+                number: "The amount must be a whole number",
+                min: "The amount must be a whole number",
+                step: "The amount must be a whole number"
+            },
+            "item-4": {
+                required: "Please enter the amount sold",
+                number: "The amount must be a whole number",
+                min: "The amount must be a whole number",
+                step: "The amount must be a whole number"
+            },
+        },
+        submitHandler: function(form) {
+            calculateAmountSold();
         }
     });
 
-    function validateName(name) {
-        if (name === "")
-            throw new Error("The name cannot be empty.");
-    }
-
-    function validateItemAmounts(amounts) {
-        for (amount of amounts) {
-            if (Number.isNaN(amount) || amount < 0)
-                throw new Error("The item amounts need to be a whole number.");
+    function calculateAmountSold() {
+        const amounts = [];
+        for (let i = 1; i <= 4; i++) {
+            const amount = parseInt(document.forms["myform"].elements[`item-${i}`].value);
+            amounts.push(amount);
         }
+        displayResults(amounts);
     }
 
     function displayResults(amounts) {
@@ -67,9 +89,5 @@ $(document).ready(function() {
 
     function calculateTotalWeeklyEarnings(totalAmountSold) {
         return totalAmountSold * 0.09 + 250;
-    }
-
-    function displayErrorMessage(msg) {
-        alert(msg);
     }
 });

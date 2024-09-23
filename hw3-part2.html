@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
         <script src="hw3-part2.js"></script>
     </head>
     <body>
@@ -25,7 +26,7 @@
         <div class="row-flex-direction">
             <section class="hw3-part2-section">
                 <h3>Enter your name and amount of each item sold</h3>
-                <form name="myform">
+                <form name="myform" id="myform">
                     <table class="hw3-part2-table">
                         <tr>
                             <td><label for='sellers-name'>Seller's name</label></td>
@@ -49,7 +50,7 @@
                         </tr>
                     </table>
                     <br>
-                    <input type="button" id="calculateAmountSold" value="Submit">
+                    <input type="submit" id="calculateAmountSold" value="Submit">
                     <input type="reset" id="resetForm" value="Clear Form">
                 </form>
             </section>
