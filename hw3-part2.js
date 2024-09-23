@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $(document).tooltip();
+
     // update the selected page in the nav bar
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
