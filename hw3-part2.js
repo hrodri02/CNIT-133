@@ -11,6 +11,15 @@ $(document).ready(function() {
         }
     });
 
+    $("#resetForm").click(function() {
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById(`item${i}-amount`).value = "";
+            document.getElementById(`item${i}-amount-sold`).value = "";
+        }
+        document.getElementById("total-amount-sold").value = "";
+        document.getElementById("total-weekly-earnings").value = "";
+    });
+
     $("#calculateAmountSold").click(function() {
         try {
             const name = document.forms["myform"].elements["sellers-name"].value;
