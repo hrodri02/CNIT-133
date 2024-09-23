@@ -32,16 +32,16 @@ $(document).ready(function() {
 
 function validateInputs(hwAvg, midterm, finalExam, participation) {
     if (!isIntegerBetweenZeroAndOneHundred(hwAvg))
-        throw Error("Error: homework average must be an integer between 0 and 100.");
+        throw new Error("Error: homework average must be an integer between 0 and 100.");
 
     if (!isIntegerBetweenZeroAndOneHundred(midterm))
-        throw Error("Error: midterm grade must be an integer between 0 and 100.");
+        throw new Error("Error: midterm grade must be an integer between 0 and 100.");
 
     if (!isIntegerBetweenZeroAndOneHundred(finalExam))
-        throw Error("Error: final exam grade must be an integer between 0 and 100.");
+        throw new Error("Error: final exam grade must be an integer between 0 and 100.");
 
     if (!isIntegerBetweenZeroAndOneHundred(participation))
-        throw Error("Error: participation grade must be an integer between 0 and 100.");
+        throw new Error("Error: participation grade must be an integer between 0 and 100.");
 }
 
 function isIntegerBetweenZeroAndOneHundred(num) {
