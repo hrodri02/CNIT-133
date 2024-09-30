@@ -136,3 +136,16 @@ div button {
     display: flex;
     flex-grow: 1;
 }
+
+#hw3-part3-textarea {
+    background-color: black;
+    color: #ccc;
+}
+
+#continue {
+    visibility: hidden;
+}
+
+#stop {
+    visibility: hidden;
+}
