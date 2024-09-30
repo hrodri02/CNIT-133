@@ -27,23 +27,23 @@ section {
     color: #ccc;
 }
 
-a {
+#hw-list a {
     text-decoration: none;
 }
 
-a:link {
+#hw-list a:link {
     color: #ccc;
 }
   
-a:visited {
+#hw-list a:visited {
     color: pink;
 }
   
-a:hover {
+#hw-list a:hover {
     color: red;
 }
   
-a:active {
+#hw-list a:active {
     color: yellow;
 }
 
