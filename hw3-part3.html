@@ -7,21 +7,8 @@
         <title>CNIT 133 HW2</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                // update the selected page in the nav bar
-                const currentPath = window.location.pathname;
-                const parts = currentPath.split('/');
-                const currentPage = parts[parts.length - 1];
-                // Iterate over each <a> tag 
-                $("nav").children('a').each(function () {
-                    // Check if the href attribute matches the current path
-                    if ($(this).attr('href') === currentPage) {
-                        $(this).addClass('nav-active'); // Add the 'active' class
-                    }
-                });
-            });
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script src="hw3-part3.js"></script>
     </head>
     <body>
         <header>
@@ -36,10 +23,10 @@
         </nav>
         <section id="hw3-section">
             <h3>Practice Multiplying One-Digit Whole Numbers</h3>
-            <form name="myform">
+            <form id="myform">
                 <table>
                     <tr>
-                        <td><label for='product'>What is x times y?</label></td>
+                        <td><label for='product' id="product-label"></label></td>
                         <td><input class="full-width-black-input" type="number" name="product" id="product" style='text-align:right;'></td>
                     </tr>
                 </table>

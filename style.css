@@ -143,9 +143,9 @@ div button {
 }
 
 #continue {
-    visibility: hidden;
+    display: none;
 }
 
 #stop {
-    visibility: hidden;
+    display: none;
 }
