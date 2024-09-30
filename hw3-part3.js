@@ -26,4 +26,23 @@ $(document).ready(function() {
     function generateRandomNumberBetween0and9() {
         return Math.floor(Math.random()*10);
     };
+
+    $("#myform").validate({
+        rules: {
+            "product": {required: true, number: true}
+        },
+        messages: {
+            "product": {
+                required: "Please enter the product",
+                number: "The product must be a number"
+            }
+        },
+        submitHandler: function(form) {
+            checkProduct();
+        }
+    });
+
+    function checkProduct() {
+        
+    }
 });
