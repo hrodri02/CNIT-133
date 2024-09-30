@@ -10,4 +10,20 @@ $(document).ready(function() {
             $(this).addClass('nav-active'); // Add the 'active' class
         }
     });
+
+    let num1 = null;
+    let num2 = null;
+
+    displayTwoRandomNumbers();
+
+    function displayTwoRandomNumbers() {
+        num1 = generateRandomNumberBetween0and9();
+        num2 = generateRandomNumberBetween0and9();
+        const label = document.getElementById("product-label");
+        label.innerText = `What is ${num1} times ${num2}?`;
+    }
+
+    function generateRandomNumberBetween0and9() {
+        return Math.floor(Math.random()*10);
+    };
 });
