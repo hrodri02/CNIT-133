@@ -27,6 +27,26 @@ section {
     color: #ccc;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #ccc;
+}
+  
+a:visited {
+    color: pink;
+}
+  
+a:hover {
+    color: red;
+}
+  
+a:active {
+    color: yellow;
+}
+
 #hw-list {
     margin-left: 20px;
 }
