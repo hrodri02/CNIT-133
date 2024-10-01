@@ -11,6 +11,13 @@ $(document).ready(function() {
     });
 
     function displayResults() {
+        const {firstSumString, firstProductString} = calculateFirstSumProductString();
+        document.getElementById("first-sum-product").innerText = `${firstSumString}\n${firstProductString}`;
+        const {secondSumString, secondProductString} = calculateSecondSumProductString();        
+        document.getElementById("second-sum-product").innerText = `${secondSumString}\n${secondProductString}`;
+    }
+
+    function calculateFirstSumProductString() {
         let firstSumString = "The result of ";
         let firstSum = 0;
         let firstProductString = "The result of ";
@@ -25,8 +32,10 @@ $(document).ready(function() {
             firstProductString += curr;
             firstProductString += (curr < max1)? " * " : ` is ${firstProduct.toLocaleString()}`;
         }
-        document.getElementById("first-sum-product").innerText = `${firstSumString}\n${firstProductString}`;
+        return {firstSumString, firstProductString};
+    }
 
+    function calculateSecondSumProductString() {
         let secondSumString = "The result of ";
         let secondSum = 0;
         let secondProductString = "The result of ";
@@ -43,7 +52,7 @@ $(document).ready(function() {
             secondProductString += (curr < max2)? " * " : ` is ${secondProduct.toLocaleString()}`;
             curr += step2;
         }
-        document.getElementById("second-sum-product").innerText = `${secondSumString}\n${secondProductString}`;
+        return {secondSumString, secondProductString};
     }
 
     displayResults();
