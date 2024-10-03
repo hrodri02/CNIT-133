@@ -169,3 +169,7 @@ div button {
 #stop {
     display: none;
 }
+
+table tr:nth-child(even) {
+    background-color: #555;
+}
