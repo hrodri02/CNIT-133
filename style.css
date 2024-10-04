@@ -186,3 +186,11 @@ table tr:nth-child(even) {
     line-height: 10px;
     color: red;
 }
+
+#hw4-part3-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    width: 50%;
+}

@@ -10,7 +10,7 @@ $(document).ready(function() {
         }
     });
 
-    const validator = $("#myform").validate({
+    const validator = $("#hw4-part3-form").validate({
         rules: {
             "side-length": {required: true, number: true, min: 2, max: 10, step: 1}
         },
