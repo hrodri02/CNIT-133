@@ -9,4 +9,20 @@ $(document).ready(function() {
             $(this).addClass('nav-active'); // Add the 'active' class
         }
     });
+
+    function drawSquare(sideLength) {
+        const p = document.getElementById("drawing-area");
+        for (let i = 0; i < sideLength; i++) {
+            if (i === 0 || i === sideLength - 1)
+                p.innerText += "*".repeat(sideLength);
+            else {
+                const emptySpace = "\u00A0".repeat((sideLength - 2) * 2);
+                console.log(emptySpace.length);
+                p.innerText += ("*" + emptySpace + "*");
+            }
+            p.innerText += "\n";
+        }
+    }
+
+    drawSquare(10);
 });
