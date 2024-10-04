@@ -29,11 +29,12 @@ $(document).ready(function() {
             `;
             const tableBody = document.getElementById(`table-body-${table_id}`);
             for (let years = 1; years <= maxYears; years++) {
-                const amount = calculateAmountInSavings(1000, years, interestRate).toFixed(2);
+                const amount = calculateAmountInSavings(1000, years, interestRate);
                 const interestRateAsDecimal = interestRate / 100;
+                const o = {style: "currency", currency: "USD"};
                 tableBody.innerHTML += `
                     <tr>
-                        <td>${years}</td><td>${amount}</td><td>${interestRateAsDecimal}</td>
+                        <td>${years}</td><td>${amount.toLocaleString("en", o)}</td><td>${interestRateAsDecimal}</td>
                     </tr>
                 `;
             }
