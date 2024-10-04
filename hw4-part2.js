@@ -31,10 +31,10 @@ $(document).ready(function() {
             for (let years = 1; years <= maxYears; years++) {
                 const amount = calculateAmountInSavings(1000, years, interestRate);
                 const interestRateAsDecimal = interestRate / 100;
-                const o = {style: "currency", currency: "USD"};
+                const amountFormatted = formatToUSCurrency(amount);
                 tableBody.innerHTML += `
                     <tr>
-                        <td>${years}</td><td>${amount.toLocaleString("en", o)}</td><td>${interestRateAsDecimal}</td>
+                        <td>${years}</td><td>${amountFormatted}</td><td>${interestRateAsDecimal}</td>
                     </tr>
                 `;
             }
@@ -43,6 +43,11 @@ $(document).ready(function() {
     
     function calculateAmountInSavings(princicpal, years, interestRate){
         return princicpal*(1 + interestRate / 100) ** years;
+    }
+
+    function formatToUSCurrency(amount) {
+        const o = {style: "currency", currency: "USD"};
+        return amount.toLocaleString("en", o);
     }
 
     addTables();
