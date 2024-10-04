@@ -22,7 +22,19 @@
         </nav>
         <section id="hw4-section">
             <h3>Display a Square</h3>
-            <p id="drawing-area"></p>
+            <form id="myform">
+                <table>
+                    <tr>
+                        <td><label for='side-length' id="side-length-label">Enter a side length between 2 and 10 (inclusive):</label></td>
+                        <td><input class="full-width-black-input" type="number" name="side-length" id="side-length" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br>
+                <p id="drawing-area"></p>
+                <br>
+                <input type="submit" id="drawSquare" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
         </section>
         <script>
         </script>
