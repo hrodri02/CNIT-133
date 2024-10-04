@@ -173,3 +173,11 @@ div button {
 table tr:nth-child(even) {
     background-color: #555;
 }
+
+.hw4-part2-tables td {
+    text-align: center;
+}
+
+.hw4-part2-tables {
+    caption-side: bottom;
+}

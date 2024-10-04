@@ -17,7 +17,7 @@ $(document).ready(function() {
         for (let table_id = 0; table_id < interestRates.length; table_id++) {
             const interestRate = interestRates[table_id];
             section.innerHTML += `
-                <table>
+                <table class="hw4-part2-tables">
                     <caption>Savings with an Interest Rate of ${interestRate}%</caption>
                     <tbody id="table-body-${table_id}">
                         <tr>
