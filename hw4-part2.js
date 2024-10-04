@@ -15,8 +15,10 @@ $(document).ready(function() {
         const interestRates = [5, 6, 7];
         const maxYears = 5;
         for (let table_id = 0; table_id < interestRates.length; table_id++) {
+            const interestRate = interestRates[table_id];
             section.innerHTML += `
                 <table>
+                    <caption>Savings with an Interest Rate of ${interestRate}%</caption>
                     <tbody id="table-body-${table_id}">
                         <tr>
                             <th>Year</th><th>Amount on Deposit</th><th>Interest Rate</th>
@@ -27,11 +29,11 @@ $(document).ready(function() {
             `;
             const tableBody = document.getElementById(`table-body-${table_id}`);
             for (let years = 1; years <= maxYears; years++) {
-                const amount = calculateAmountInSavings(1000, years, interestRates[table_id]).toFixed(2);
-                const interestRate = interestRates[table_id] / 100;
+                const amount = calculateAmountInSavings(1000, years, interestRate).toFixed(2);
+                const interestRateAsDecimal = interestRate / 100;
                 tableBody.innerHTML += `
                     <tr>
-                        <td>${years}</td><td>${amount}</td><td>${interestRate}</td>
+                        <td>${years}</td><td>${amount}</td><td>${interestRateAsDecimal}</td>
                     </tr>
                 `;
             }
