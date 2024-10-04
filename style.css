@@ -181,3 +181,8 @@ table tr:nth-child(even) {
 .hw4-part2-tables {
     caption-side: bottom;
 }
+
+#drawing-area {
+    line-height: 10px;
+    color: red;
+}
