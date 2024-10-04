@@ -10,7 +10,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#myform").validate({
+    const validator = $("#myform").validate({
         rules: {
             "side-length": {required: true, number: true, min: 2, max: 10, step: 1}
         },
@@ -50,5 +50,6 @@ $(document).ready(function() {
     $("#resetDrawingArea").click(function() {
         const p = document.getElementById("drawing-area");
         p.innerText = "";
+        validator.resetForm();
     });
 });
