@@ -30,10 +30,10 @@ $(document).ready(function() {
 
     function getSideLengthAndDrawSquare() {
         const sideLength = parseInt(document.forms["myform"].elements["side-length"].value);
-        drawSquare(sideLength);
+        drawSquareUsingTable(sideLength);
     }
 
-    function drawSquare(sideLength) {
+    function drawSquareUsingParagrah(sideLength) {
         const p = document.getElementById("drawing-area");
         p.innerText = "";
         for (let i = 0; i < sideLength; i++) {
@@ -47,9 +47,34 @@ $(document).ready(function() {
         }
     }
 
+    function drawSquareUsingTable(sideLength) {
+        const div = document.getElementById("drawing-area-2");
+        div.innerHTML = `
+            <table id="square-table">
+                <tbody id="square-table-body">
+                </tbody>
+            </table>
+        `;
+        const container = document.getElementById("square-table-body");
+        for (let row = 0; row < sideLength; row++) {
+            container.innerHTML +=  `
+                <tr id="row-${row}"></tr>
+            `;
+            for (let col = 0; col < sideLength; col++) {
+                const currRow = document.getElementById(`row-${row}`);
+                if (row > 0 && row < sideLength - 1 && col > 0 && col < sideLength - 1)
+                    currRow.innerHTML += `<td> </td>`;
+                else
+                    currRow.innerHTML += `<td>*</td>`;
+            }
+        }
+    }
+
     $("#resetDrawingArea").click(function() {
         const p = document.getElementById("drawing-area");
         p.innerText = "";
+        const div = document.getElementById("drawing-area-2");
+        div.innerHTML = "";
         validator.resetForm();
     });
 });

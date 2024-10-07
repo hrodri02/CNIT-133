@@ -170,7 +170,7 @@ div button {
     display: none;
 }
 
-table tr:nth-child(even) {
+.hw4-part2-tables tr:nth-child(even) {
     background-color: #555;
 }
 
@@ -193,4 +193,24 @@ table tr:nth-child(even) {
     justify-content: center;
     align-items: center;    
     width: 50%;
+}
+
+#square-table {
+    border: none;
+}
+
+#square-table th, #square-table td {
+    border: none; 
+}
+
+#square-table td {
+    text-align: center;
+}
+
+#square-table tr {
+    height: 20px;
+}
+
+#square-table td {
+    width: 20px;
 }
