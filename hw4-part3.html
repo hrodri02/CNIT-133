@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Javascript HW 3 part 1">
+        <meta name="description" content="Javascript HW 4 part 3">
         <title>CNIT 133 HW2</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
         <script src="hw4-part3.js"></script>
     </head>
     <body>
@@ -21,7 +22,23 @@
             <a href="hw4-part3.html">Part 3</a>
         </nav>
         <section id="hw4-section">
-            <h3>HW 4 Part 3</h3>
+            <h3>Display a Square</h3>
+            <form name="myform" id="hw4-part3-form">
+                <table>
+                    <tr>
+                        <td><label for='side-length' id="side-length-label">Enter a side length between 2 and 10 (inclusive):</label></td>
+                        <td><input class="full-width-black-input" type="number" name="side-length" id="side-length" style='text-align:right;'></td>
+                    </tr>
+                </table>
+                <br>
+                <p id="drawing-area"></p>
+                <div id="drawing-area-2"></div>
+                <br>
+                <div>
+                    <input type="submit" id="drawSquare" value="DRAW SQUARE">
+                    <input type="reset" id="resetDrawingArea" value="RESET">
+                </div>
+            </form>
         </section>
         <script>
         </script>
