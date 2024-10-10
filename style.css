@@ -18,13 +18,18 @@ header {
     display: flex;
     align-items: center;
     color: #ccc;
+    height: 10vh;
     padding: 10px;
 }
 
 section {
-    flex: 1;
+    height: 80vh;
     overflow: auto;
     color: #ccc;
+}
+
+footer {
+    height: 10vh;
 }
 
 #hw-list a {
