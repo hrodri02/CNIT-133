@@ -184,7 +184,8 @@ div button {
 
 #drawing-area {
     line-height: 10px;
-    color: red;
+    color: #ccc;
+    text-align: center;
 }
 
 #hw4-part3-form {
