@@ -33,14 +33,14 @@ $(document).ready(function() {
         drawSquareUsingTable(sideLength);
     }
 
-    function drawSquareUsingParagrah(sideLength) {
+    function drawSquareUsingParagraph(sideLength) {
         const p = document.getElementById("drawing-area");
         p.innerText = "";
         for (let i = 0; i < sideLength; i++) {
             if (i === 0 || i === sideLength - 1)
                 p.innerText += "*".repeat(sideLength);
             else {
-                const emptySpace = "\u00A0".repeat((sideLength - 2) * 2);
+                const emptySpace = "\u00A0".repeat(sideLength - 2);
                 p.innerText += ("*" + emptySpace + "*");
             }
             p.innerText += "\n";
