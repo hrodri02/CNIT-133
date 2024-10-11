@@ -56,4 +56,6 @@ $(document).ready(function() {
     }
 
     displayResults();
+
+    $(".draggable").draggable();
 });
