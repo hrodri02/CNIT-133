@@ -222,3 +222,7 @@ div button {
 #square-table td {
     width: 20px;
 }
+
+.half-screen-width {
+    width: 50vw;
+}
