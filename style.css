@@ -226,3 +226,14 @@ div button {
 .half-screen-width {
     width: 50vw;
 }
+
+.thin-white-border {
+    border: 1px solid #ccc;
+}
+
+.full-width-black-background {
+    width: 100%;
+    background-color: black;
+    color: #ccc;
+    text-align: center;
+}
