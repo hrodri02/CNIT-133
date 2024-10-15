@@ -20,8 +20,63 @@
             <a href="hw5-part2.html">Part 2</a>
             <a href="hw5-part3.html">Part 3</a>
         </nav>
-        <section id="hw5-section">
+        <section class="hw5-section">
             <h3>Part 1</h3>
+            <form>
+                <input type="text" name="fullname" id="fullname"/>
+                <br><br>
+                <fieldset>
+                    <legend>Select your age group:</legend>
+                    <div>
+                        <input type="radio" id="less-than-21" name="age-group" value="less-than-21"/>
+                        <label for="less-than-21">Less than 21</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="21-50" name="age-group" value="21-50" />
+                        <label for="21-50">Between 21 and 50</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="older-than-50" name="age-group" value="older-than-50" />
+                        <label for="older-than-50">Older than 50</label>
+                    </div>
+                </fieldset>
+                <br><br>
+                <fieldset>
+                    <legend>Select your web browser of choice:</legend>
+                    <div>
+                        <input type="checkbox" id="chrome" name="web-browser" value="chrome"/>
+                        <label for="chrome">Chrome</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="firefox" name="web-browser" value="firefox" />
+                        <label for="firefox">Firefox</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="edge" name="web-browser" value="edge" />
+                        <label for="edge">Edge</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="safari" name="web-browser" value="safari" />
+                        <label for="safari">Safari</label>
+                    </div>
+                </fieldset>
+                <br><br>
+                <select name="movie-genres" id="movie-genres">
+                    <option value="">--Select Genre--</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="drama">Drama</option>
+                    <option value="documentary">Documentary</option>
+                    <option value="science-fiction">Science Fiction</option>
+                </select>
+                <br><br>
+                <input type="submit" id="submitUserData" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </form>
+        </section>
+        <section class="hw5-section">
+            <h3>Results</h3>
+            <textarea rows="3" cols="40" name="result" id="result"></textarea>
         </section>
         <footer>
         </footer>
