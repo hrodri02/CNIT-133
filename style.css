@@ -237,3 +237,9 @@ div button {
     color: #ccc;
     text-align: center;
 }
+
+.center-child-elements {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
