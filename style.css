@@ -231,6 +231,11 @@ div button {
     border: 1px solid #ccc;
 }
 
+.black-background-white-text {
+    background-color: black;
+    color: #ccc;
+}
+
 .full-width-black-background {
     width: 100%;
     background-color: black;
