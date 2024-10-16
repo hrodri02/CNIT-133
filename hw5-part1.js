@@ -48,4 +48,9 @@ $(document).ready(function() {
             throw new Error("You must select your favorite movie genre.");
         }
     }
+
+    $("#resetInputs").click(function() {
+        const textarea = document.getElementById("result");
+        textarea.innerText = "";
+    });
 });
