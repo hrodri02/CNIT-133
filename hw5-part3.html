@@ -20,9 +20,23 @@
             <a href="hw5-part2.html">Part 2</a>
             <a href="hw5-part3.html">Part 3</a>
         </nav>
-        <section class="hw5-section">
-            <h3>Part 3</h3>
-        </section>
+        <div class="row-flex-direction">
+            <section class="hw5-section half-screen-width">
+                <h3>Enter the full name of a state or the two-letter abbreviation</h3>
+                <form name="myform">
+                    <input class="full-width-black-input thin-white-border" type="text" name="state" id="state" placeholder="Enter a state name"/>
+                    <br><br>
+                    <div class="center-child-elements">
+                        <input type="button" id="submitStateName" value="SUBMIT">
+                        <input type="reset" value="RESET">
+                    </div>
+                </form>
+            </section>
+            <section class="hw5-section half-screen-width">
+                <h3>Results</h3>
+                <textarea class="black-background-white-text thin-white-border" rows="3" cols="40" name="result" id="result"></textarea>
+            </section>
+        </div>
         <footer>
         </footer>
     </body>
