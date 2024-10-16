@@ -86,7 +86,7 @@ nav a {
     align-items: center;
 }
 
-#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, #hw5-section {
+#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -221,4 +221,30 @@ div button {
 
 #square-table td {
     width: 20px;
+}
+
+.half-screen-width {
+    width: 50vw;
+}
+
+.thin-white-border {
+    border: 1px solid #ccc;
+}
+
+.black-background-white-text {
+    background-color: black;
+    color: #ccc;
+}
+
+.full-width-black-background {
+    width: 100%;
+    background-color: black;
+    color: #ccc;
+    text-align: center;
+}
+
+.center-child-elements {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
 }
