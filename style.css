@@ -18,10 +18,10 @@ body {
 
 header {
     display: flex;
+    justify-content: center;
     align-items: center;
     color: #ccc;
     height: 10vh;
-    padding: 10px;
 }
 
 section {
