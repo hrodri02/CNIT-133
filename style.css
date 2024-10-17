@@ -24,6 +24,22 @@ header {
     height: 10vh;
 }
 
+.left-item {
+    margin: 0 10px;
+}
+
+.center-item {
+    flex-grow: 1;
+}
+
+header i {
+    font-size: 1.5rem;
+}
+
+h2 {
+    text-align: center;
+}
+
 section {
     height: 80vh;
     overflow: auto;
