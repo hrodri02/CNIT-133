@@ -24,7 +24,7 @@ $(document).ready(function() {
         let firstProduct = 1;
         const max1 = 25;
         const step1 = 4;
-        for (let curr = 9; curr <= max1; curr += step1) {
+        for (let curr = 5; curr <= max1; curr += step1) {
             firstSum += curr;
             firstSumString += curr;
             firstSumString += (curr < max1)? " + " : ` is ${firstSum}`;
