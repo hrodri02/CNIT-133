@@ -6,48 +6,45 @@
         <meta name="description" content="hw 2">
         <title>CNIT 133 HW2</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/769642dbf3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                const currentPath = window.location.pathname;
-                const parts = currentPath.split('/');
-                const currentPage = parts[parts.length - 1];
-                // Iterate over each <a> tag 
-                $("nav").children('a').each(function () {
-                    // Check if the href attribute matches the current path
-                    if ($(this).attr('href') === currentPage) {
-                        $(this).addClass('nav-active'); // Add the 'active' class
-                    }
-                });
-            });
-        </script>
+        <script src="hw2.js"></script>
     </head>
     <body>
         <header>
-            <h2>CNIT 133 Homework 2 - Basic Operations</h2>
+            <i class="fa-solid fa-bars left-item" id="menu-bar"></i>
+            <h2 class="center-item">CNIT 133 Homework 2 - Basic Operations</h2>
         </header>
         <nav>
-            <a href="hw1.html">HW list</a>
             <a href="hw2.html">Home</a>
             <a href="hw2-part1.html">Part 1</a>
             <a href="hw2-part2.html">Part 2</a>
             <a href="hw2-part3.html">Part 3</a>
         </nav>
-        <section id="hw2-section">
-            <h3>Welcome to my implementation of HW 2 for my Javascript, jQuery, and AJAX class.</h3>
-            <ol>
-                <li>
-                    Part 1 focuses on using document.write and styling elements.
-                </li>
-                <li>
-                    Part 2 calculates the sum, average, and product of three numbers and determines the smallest and largest of the three.
-                </li>
-                <li>
-                    Part 3 is converts a U.S. Dollar amount to different currencies.
-                </li>
-            </ol>
-        </section>
-        <footer>
-        </footer>
+        <div class='row-flex-direction'>
+            <div class='vertical-nav-bar'>
+                <a href='hw2.html'>HW 2</a>
+                <a href='hw3.html'>HW 3</a>
+                <a href='hw4.html'>HW 4</a>
+                <a href='hw5.html'>HW 5</a>
+                <a href='#'>HW 6</a>
+                <a href='#'>HW 7</a>
+                <a href='#'>HW 8</a>
+            </div>
+            <section id="hw2-section">
+                <h3>Welcome to my implementation of HW 2 for my Javascript, jQuery, and AJAX class.</h3>
+                <ol>
+                    <li>
+                        Part 1 focuses on using document.write and styling elements.
+                    </li>
+                    <li>
+                        Part 2 calculates the sum, average, and product of three numbers and determines the smallest and largest of the three.
+                    </li>
+                    <li>
+                        Part 3 is converts a U.S. Dollar amount to different currencies.
+                    </li>
+                </ol>
+            </section>
+        </div>
     </body>
 </html>
