@@ -25,6 +25,10 @@ $(document).ready(function() {
         },
         submitHandler: function(form) {
             getSideLengthAndDrawSquare();
+        },
+        invalidHandler: function() {
+            const div = document.getElementById("drawing-area-2");
+            div.innerHTML = '';
         }
     });
 
