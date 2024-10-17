@@ -8,25 +8,11 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/769642dbf3.js" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function() {
-                // update the selected page in the nav bar
-                const currentPath = window.location.pathname;
-                const parts = currentPath.split('/');
-                const currentPage = parts[parts.length - 1];
-                // Iterate over each <a> tag 
-                $("nav").children('a').each(function () {
-                    // Check if the href attribute matches the current path
-                    if ($(this).attr('href') === currentPage) {
-                        $(this).addClass('nav-active'); // Add the 'active' class
-                    }
-                });
-            });
-        </script>
+        <script src="hw2-part1.js"></script>
     </head>
     <body>
         <header>
-            <i class="fa-solid fa-bars left-item"></i>
+            <i class="fa-solid fa-bars left-item" id="menu-bar"></i>
             <h2 class="center-item">CNIT 133 Homework 2 - Basic Operations</h2>
         </header>
         <nav>
