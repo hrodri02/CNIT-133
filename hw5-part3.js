@@ -42,13 +42,13 @@ $(document).ready(function() {
     });
 
     function validateStateName() {
-        const name = document.forms["myform"].elements["state"].value;
+        const name = document.forms["myform"].elements["state"].value.trim();
         if (name.length === 0)
             throw new Error("State name is required");
     }
 
     function findIndexOfState() {
-        const name = document.forms["myform"].elements["state"].value;
+        const name = document.forms["myform"].elements["state"].value.trim();
         const nameLowerCase = name.toLocaleLowerCase();
         let index = -1;
         for (let row = 0; row < stateInfo.length; row++) {
