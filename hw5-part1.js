@@ -10,6 +10,10 @@ $(document).ready(function() {
         }
     });
 
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
+
     $("#submitUserData").click(function() {
         const textarea = document.getElementById("result");
         try {
