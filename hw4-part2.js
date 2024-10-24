@@ -10,6 +10,10 @@ $(document).ready(function() {
         }
     });
 
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
+
     function addTables() {
         const section = document.getElementById('hw4-section');
         const interestRates = [5, 6, 7];
