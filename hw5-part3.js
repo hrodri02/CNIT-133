@@ -10,6 +10,10 @@ $(document).ready(function() {
         }
     });
 
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
+
    const stateInfo = [
         ["AL", "Alabama", "Montgomery", 4903185],
         ["AK", "Alaska", "Juneau", 731545],
