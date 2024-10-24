@@ -9,4 +9,8 @@ $(document).ready(function() {
             $(this).addClass('nav-active'); // Add the 'active' class
         }
     });
+
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
 });
