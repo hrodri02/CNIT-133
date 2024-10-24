@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // update the selected page in the nav bar
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

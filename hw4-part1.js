@@ -10,6 +10,10 @@ $(document).ready(function() {
         }
     });
 
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
+
     function displayResults() {
         const {firstSumString, firstProductString} = calculateFirstSumProductString();
         document.getElementById("first-sum-product").innerText = `${firstSumString}\n${firstProductString}`;

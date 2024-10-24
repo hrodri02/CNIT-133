@@ -13,6 +13,10 @@ $(document).ready(function() {
         }
     });
 
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
+
     $("#resetForm").click(function() {
         for (let i = 1; i <= 4; i++) {
             document.getElementById(`item${i}-amount`).value = "";

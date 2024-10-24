@@ -6,90 +6,57 @@
         <meta name="description" content="Javascript  HW 2 part 1">
         <title>CNIT 133 HW2</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/769642dbf3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#fade-btn").click(function() {
-                    $('textarea').fadeTo('slow', 0.25);
-                });
-
-                $("#calculateHW2Part2Results").click(function() {
-                    $('textarea').fadeTo('slow', 1);
-                    const n = 3;
-                    let sum = 0;
-                    let product = 1;
-                    let smallest = Number.MAX_VALUE;
-                    let largest = Number.MIN_VALUE;
-                    for (let i = 1; i <= n; i++) {
-                        const num = parseFloat(document.forms['myform'].elements['num' + i].value);
-                        if (Number.isNaN(num) || !Number.isInteger(num)) {
-                            document.forms['myform'].elements['result'].value = 'All the inputs must be integers!';
-                            return;
-                        }
-                        sum += num;
-                        product *= num;
-                        smallest = Math.min(smallest, num);
-                        largest = Math.max(largest, num);
-                    }
-                    let avg = sum / n;
-                    document.forms['myform'].elements['result'].value = 
-                        `Sum: ${sum.toFixed(2)}\n` +
-                        `Product: ${product.toFixed(2)}\n` +
-                        `Average: ${avg.toFixed(2)}\n` +
-                        `Smallest: ${smallest}\n` +
-                        `Largest: ${largest}`;
-                });
-
-                const currentPath = window.location.pathname;
-                const parts = currentPath.split('/');
-                const currentPage = parts[parts.length - 1];
-                $("nav").children('a').each(function () {
-                    // Check if the href attribute matches the current path
-                    if ($(this).attr('href') === currentPage) {
-                        $(this).addClass('nav-active'); // Add the 'active' class
-                    }
-                });
-            });
-        </script>
+        <script src="hw2-part2.js"></script>
     </head>
     <body>
         <header>
-            <h2>CNIT 133 Homework 2 - Basic Operations</h2>
+            <i class="fa-solid fa-bars left-item" id="menu-bar"></i>
+            <h2 class="center-item">CNIT 133 Homework 2 - Basic Operations</h2>
         </header>
         <nav>
-            <a href="hw1.html">HW list</a>
             <a href="hw2.html">Home</a>
             <a href="hw2-part1.html">Part 1</a>
             <a href="hw2-part2.html">Part 2</a>
             <a href="hw2-part3.html">Part 3</a>
         </nav>
-        <section id="hw2-section">
-            <h3>Calculate Sum, Average, Product, Min, and Max of Three Integers</h3>
-            <form name="myform">
-                <table>
-                    <tr>
-                        <td><label for='num1'>First Integer:</label></td>
-                        <td><input type="number" name="num1" id="num1" value="0" style='text-align:right;'></td>
-                    </tr>
-                    <tr>
-                        <td><label for='num2'>Second Integer:</label></td>
-                        <td><input type="number" name="num2" id="num2" value="0" style='text-align:right;'></td>
-                    </tr>
-                    <tr>
-                        <td><label for='num3'>Third Integer:</label></td>
-                        <td><input type="number" name="num3" id="num3" value="0" style='text-align:right;'></td>
-                    </tr>
-                </table>
-                <br>
-                <br>Results<br>
-                <textarea rows="5" cols="40" name="result" id="result"></textarea>
-                <br><br>
-                <input type="button" id="calculateHW2Part2Results" value="SUBMIT">
-                <button type="button" id="fade-btn">FADE</button>
-                <input type="reset" value="RESET">
-            </form>
-        </section>
-        <footer>
-        </footer>
+        <div class='row-flex-direction'>
+            <div class='vertical-nav-bar'>
+                <a href='hw2.html'>HW 2</a>
+                <a href='hw3.html'>HW 3</a>
+                <a href='hw4.html'>HW 4</a>
+                <a href='hw5.html'>HW 5</a>
+                <a href='#'>HW 6</a>
+                <a href='#'>HW 7</a>
+                <a href='#'>HW 8</a>
+            </div>
+            <section id="hw2-section">
+                <h3>Calculate Sum, Average, Product, Min, and Max of Three Integers</h3>
+                <form name="myform">
+                    <table>
+                        <tr>
+                            <td><label for='num1'>First Integer:</label></td>
+                            <td><input type="number" name="num1" id="num1" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='num2'>Second Integer:</label></td>
+                            <td><input type="number" name="num2" id="num2" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='num3'>Third Integer:</label></td>
+                            <td><input type="number" name="num3" id="num3" value="0" style='text-align:right;'></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>Results<br>
+                    <textarea rows="5" cols="40" name="result" id="result"></textarea>
+                    <br><br>
+                    <input type="button" id="calculateHW2Part2Results" value="SUBMIT">
+                    <button type="button" id="fade-btn">FADE</button>
+                    <input type="reset" value="RESET">
+                </form>
+            </section>
+        </div>
     </body>
 </html>

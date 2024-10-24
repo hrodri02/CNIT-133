@@ -6,47 +6,59 @@
         <meta name="description" content="Javascript HW 3 part 1">
         <title>CNIT 133 HW2</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/769642dbf3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="hw3-part1.js"></script>
     </head>
     <body>
         <header>
-            <h2>CNIT 133 Homework 3 - Functions</h2>
+            <i class="fa-solid fa-bars left-item" id="menu-bar"></i>
+            <h2 class="center-item">CNIT 133 Homework 3 - Functions</h2>
         </header>
         <nav>
-            <a href="hw1.html">HW list</a>
             <a href="hw3.html">Home</a>
             <a href="hw3-part1.html">Part 1</a>
             <a href="hw3-part2.html">Part 2</a>
             <a href="hw3-part3.html">Part 3</a>
         </nav>
-        <section id="hw3-section">
-            <h3>Calculate a Student's Grade</h3>
-            <form name="myform">
-                <table>
-                    <tr>
-                        <td><label for='hwAvg'>Homework Average</label></td>
-                        <td><input type="number" name="hwAvg" id="hwAvg" value="0" style='text-align:right;'></td>
-                    </tr>
-                    <tr>
-                        <td><label for='midterm'>Midterm Grade</label></td>
-                        <td><input type="number" name="midterm" id="midterm" value="0" style='text-align:right;'></td>
-                    </tr>
-                    <tr>
-                        <td><label for='finalExam'>Final Exam Grade</label></td>
-                        <td><input type="number" name="finalExam" id="finalExam" value="0" style='text-align:right;'></td>
-                    </tr>
-                    <tr>
-                        <td><label for='participation'>Participation Grade</label></td>
-                        <td><input type="number" name="participation" id="participation" value="0" style='text-align:right;'></td>
-                    </tr>
-                </table>
-                <br><label>Results</label><br>
-                <textarea rows="3" cols="40" name="result" id="result"></textarea>
-                <br><br>
-                <input type="button" id="calculateFinalGrade" value="SUBMIT">
-                <input type="reset" value="RESET">
-            </form>
-        </section>
+        <div class='row-flex-direction'>
+            <div class='vertical-nav-bar'>
+                <a href='hw2.html'>HW 2</a>
+                <a href='hw3.html'>HW 3</a>
+                <a href='hw4.html'>HW 4</a>
+                <a href='hw5.html'>HW 5</a>
+                <a href='#'>HW 6</a>
+                <a href='#'>HW 7</a>
+                <a href='#'>HW 8</a>
+            </div>
+            <section id="hw3-section">
+                <h3>Calculate a Student's Grade</h3>
+                <form name="myform">
+                    <table>
+                        <tr>
+                            <td><label for='hwAvg'>Homework Average</label></td>
+                            <td><input type="number" name="hwAvg" id="hwAvg" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='midterm'>Midterm Grade</label></td>
+                            <td><input type="number" name="midterm" id="midterm" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='finalExam'>Final Exam Grade</label></td>
+                            <td><input type="number" name="finalExam" id="finalExam" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='participation'>Participation Grade</label></td>
+                            <td><input type="number" name="participation" id="participation" value="0" style='text-align:right;'></td>
+                        </tr>
+                    </table>
+                    <br><label>Results</label><br>
+                    <textarea rows="3" cols="40" name="result" id="result"></textarea>
+                    <br><br>
+                    <input type="button" id="calculateFinalGrade" value="SUBMIT">
+                    <input type="reset" value="RESET">
+                </form>
+            </section>
+        </div>
     </body>
 </html>

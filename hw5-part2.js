@@ -10,6 +10,10 @@ $(document).ready(function() {
         }
     });
 
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
+
     $("#go").click(function() {
         const urlString = document.forms["form2"].elements["destList2"].value;
         if (urlString !== "") {

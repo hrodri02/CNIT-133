@@ -11,6 +11,10 @@ $(document).ready(function() {
         }
     });
 
+    $("#menu-bar").click(function() {
+        $(".vertical-nav-bar").toggle();
+    });
+
     $("#calculateFinalGrade").click(function() {
         const hwAvg = parseInt(document.forms["myform"].elements["hwAvg"].value);
         const midterm = parseInt(document.forms["myform"].elements["midterm"].value);
