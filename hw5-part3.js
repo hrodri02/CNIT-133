@@ -61,9 +61,18 @@ $(document).ready(function() {
             }
         }
 
-        if (index < 0)
-            throw new Error("Sorry, we do not have any information about that state in our database.");
+        if (index < 0) {
+            const stateNames = getStateNames();
+            throw new Error(`Sorry, we do not have any information about that state in our database. We only have information about ${stateNames}.`);
+        }
 
         return index;
+    }
+
+    function getStateNames() {
+        let states = "";
+        for (let i = 0; i < stateInfo.length; i++)
+            states += stateInfo[i][1] + ((i == stateInfo.length - 1)? "" : ", ");
+        return states;
     }
 });
