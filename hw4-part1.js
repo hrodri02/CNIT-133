@@ -81,8 +81,19 @@ $(document).ready(function() {
     $(".draggable").draggable({ 
         start: function(event, ui) {
             $(this).data("startPos", { left:0, top:0 });
-        },
-        containment: ".problem-container"
+        }
+     });
+
+     $("#draggable-container-1").children('.draggable').each(function() {
+        $(this).draggable({
+            containment: "#problem-container-1"
+        });
+     });
+
+     $("#draggable-container-2").children('.draggable').each(function() {
+        $(this).draggable({
+            containment: "#problem-container-2"
+        });
      });
 
     let spotAvailable = {'draggable-container-1': [true, true, true], 
