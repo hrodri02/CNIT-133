@@ -32,12 +32,78 @@
                 <a href='#'>HW 7</a>
                 <a href='#'>HW 8</a>
             </div>
-            <section id="hw4-section" class="draggable">
+            <section id="hw4-section">
                 <h3>HW 4 Part 1</h3>
-                <h4>The sum and product of every fourth integer between 5 to 25 (inclusive)</h4>
-                <p id="first-sum-product"></p>
-                <h4>The sum and product of every third integer between 3 to 18 (inclusive)</h4>
-                <p id="second-sum-product"></p>
+                <div class="problem-container column-flex-direction">
+                    <div>
+                        <h4>The sum and product of every fourth integer between 5 to 25 (inclusive)</h4>
+                    </div>
+                    <div class="row-flex-direction">
+                        <div class="loop-problem-container row-flex-direction">
+                            <pre>
+                                <code>
+for (let i = <div id="area1" class="droppable"></div>; i &lt;= <div id="area2" class="droppable"></div>; i += <div id="area3" class="droppable"></div>) {
+    sum += arr[i];
+    product *= arr[i];
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="results-area">
+                            <p id="first-sum-product"></p>
+                        </div>
+                    </div>
+                    <div class="column-flex-direction">
+                        <p>Drag the elements to the right place to get the sum and product.</p>
+                        <div id='draggable-container-1' class="draggable-container row-flex-direction space-around">
+                            <div id="start-1" class="draggable">
+                                <p>5</p>
+                            </div>
+                            <div id="end-1" class="draggable">
+                                <p>25</p>
+                            </div>
+                            <div id="step-1" class="draggable">
+                                <p>4</p>
+                            </div>
+                        </div>
+                        <button id="reset-first-problem" class="reset-button">Reset</button>
+                    </div>
+                </div>
+                <div class="problem-container column-flex-direction">
+                    <div>
+                        <h4>The sum and product of every third integer between 3 to 18 (inclusive)</h4>
+                    </div>
+                    <div class="row-flex-direction">
+                        <div class="loop-problem-container row-flex-direction">
+                            <pre>
+                                <code>
+for (let i = <div id="area4" class="droppable"></div>; i &lt;= <div id="area5" class="droppable"></div>; i += <div id="area6" class="droppable"></div>) {
+    sum += arr[i];
+    product *= arr[i];
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="results-area">
+                            <p id="second-sum-product"></p>
+                        </div>
+                    </div>
+                    <div class="column-flex-direction">
+                        <p>Drag the elements to the right place to get the sum and product.</p>
+                        <div id="draggable-container-2" class="draggable-container row-flex-direction space-around">
+                            <div id="start-2" class="draggable">
+                                <p>3</p>
+                            </div>
+                            <div id="end-2" class="draggable">
+                                <p>18</p>
+                            </div>
+                            <div id="step-2" class="draggable">
+                                <p>3</p>
+                            </div>
+                        </div>
+                        <button id="reset-second-problem" class="reset-button">Reset</button>
+                    </div>
+                </div>
             </section>
         </div>
     </body>
