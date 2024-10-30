@@ -190,9 +190,13 @@ div button {
     text-align: right;
 }
 
-.row-flex-direction {
+.content-container {
     display: flex;
     flex-grow: 1;
+}
+
+.row-flex-direction {
+    flex-direction: row;
 }
 
 .column-flex-direction {
@@ -321,6 +325,8 @@ div button {
 }
 
 .draggable-container {
+    display: flex;
+    flex-grow: 1;
     align-items: center;
     height: 2em;
     background-color: #555;
@@ -335,3 +341,18 @@ div button {
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 640px) {
+    .content-container {
+      flex-direction: column;
+    }
+
+    .vertical-nav-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        background-color: #222;
+    }
+  }
