@@ -329,3 +329,9 @@ div button {
 .reset-button {
     margin: 1em;
 }
+
+.container-for-perfect-centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
