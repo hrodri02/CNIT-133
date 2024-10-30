@@ -195,6 +195,12 @@ div button {
     flex-grow: 1;
 }
 
+.column-flex-direction {
+    display: flex;
+    /* flex-grow: 1; */
+    flex-direction: column;
+}
+
 #hw3-part3-textarea {
     background-color: black;
     color: #ccc;
@@ -278,4 +284,54 @@ div button {
     display: flex;
     justify-content: center;
     column-gap: 10px;
+}
+
+.problem-container {
+    width: 70%;
+}
+
+.loop-problem-container {
+    width: 50%;
+}
+
+.results-area {
+    width: 50%;
+}
+
+.draggable {
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    width: 1em;
+    height: 1em;
+    background-color: #ccc;
+}
+
+.droppable {
+    display: inline-block;
+    background-color: #ccc; 
+    color: black;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.draggable-container {
+    align-items: center;
+    height: 2em;
+    background-color: #555;
+}
+
+.reset-button {
+    margin: 1em;
+}
+
+.container-for-perfect-centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
