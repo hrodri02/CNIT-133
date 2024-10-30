@@ -78,7 +78,8 @@ $(document).ready(function() {
         return {secondSumString, secondProductString};
     }
 
-    $(".draggable").draggable({ 
+    $(".draggable").draggable({
+        revert: "invalid", 
         start: function(event, ui) {
             $(this).data("startPos", { left:0, top:0 });
         }
@@ -102,6 +103,7 @@ $(document).ready(function() {
                         'start-2': -1, 'end-2': -1, 'step-2': -1};
     const indexOfArea = {'area1': 0, 'area2': 1, 'area3': 2,
                         'area4': 0, 'area5': 1, 'area6': 2};
+    // TODO: if draggable is not dropped in a droppable, return to initial position
     $(".droppable").droppable({
         accept: ".draggable",
         start: function(event, ui) {
