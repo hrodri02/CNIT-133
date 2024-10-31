@@ -39,7 +39,7 @@
                         <h4>The sum and product of every fourth integer between 5 to 25 (inclusive)</h4>
                     </div>
                     <div class="row-flex-direction">
-                        <div class="loop-problem-container row-flex-direction">
+                        <div class="loop-problem-container container-for-perfect-centering">
                             <pre>
                                 <code>
 let sum = 0;
@@ -78,15 +78,17 @@ for (let i = <div id="area1" class="droppable"></div>; i &lt;= <div id="area2" c
                         <h4>The sum and product of every third integer between 3 to 18 (inclusive)</h4>
                     </div>
                     <div class="row-flex-direction">
-                        <div class="loop-problem-container row-flex-direction">
+                        <div class="loop-problem-container container-for-perfect-centering">
                             <pre>
                                 <code>
 let sum = 0;
 let product = 1;
 
-for (let i = <div id="area4" class="droppable"></div>; i &lt;= <div id="area5" class="droppable"></div>; i += <div id="area6" class="droppable"></div>) {
+let i = <div id="area4" class="droppable"></div>;
+while (i &lt;= <div id="area5" class="droppable"></div>;) {
     sum += arr[i];
     product *= arr[i];
+    i += <div id="area6" class="droppable"></div>
 }
                                 </code>
                             </pre>

@@ -196,12 +196,12 @@ div button {
 }
 
 .row-flex-direction {
+    display: flex;
     flex-direction: row;
 }
 
 .column-flex-direction {
     display: flex;
-    /* flex-grow: 1; */
     flex-direction: column;
 }
 
@@ -309,6 +309,7 @@ div button {
     align-items: center;
     width: 1em;
     height: 1em;
+    padding: 10px;
     background-color: #ccc;
 }
 
