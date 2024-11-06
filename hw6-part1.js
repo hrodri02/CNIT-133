@@ -13,4 +13,34 @@ $(document).ready(function() {
     $("#menu-bar").click(function() {
         $(".vertical-nav-bar").toggle();
     });
+
+    $.validator.addMethod("regex", function(value, element, regexp) {
+        return this.optional(element) || regexp.test(value);
+    }, "Please enter a valid value.");
+
+    $("#myform").validate({
+        rules: {
+            "number": {
+                required: true, 
+                number: true,
+                regex: /(\d)*\.(\d)(\d)(\d)(\d)/
+            }
+        },
+        messages: {
+            "number": {
+                regex: "Number must have four digits after the decimal."
+            }
+        },
+        submitHandler: function(form) {
+            displayResults();
+        },
+        errorPlacement: function (error, element) {
+            $("#result").val(error.text());
+        }
+    });
+
+    function displayResults() {
+        const number = $("#myform").find("#number").val();
+        $("#result").val(number);
+    }
 });
