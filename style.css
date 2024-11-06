@@ -117,7 +117,7 @@ nav a {
     align-items: center;
 }
 
-#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section {
+#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section, .hw6-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
