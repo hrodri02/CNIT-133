@@ -23,7 +23,8 @@ $(document).ready(function() {
             "number": {
                 required: true, 
                 number: true,
-                regex: /(\d)*\.(\d)(\d)(\d)(\d)/
+                min: 0,
+                regex: /[-]?(\d)*(\.)(\d){4,4}/
             }
         },
         messages: {
@@ -40,7 +41,13 @@ $(document).ready(function() {
     });
 
     function displayResults() {
-        const number = $("#myform").find("#number").val();
-        $("#result").val(number);
+        const numberAsString = $("#myform").find("#number").val();
+        const number = parseFloat(numberAsString);
+        const int = Math.round(number);
+        const sqrt = Math.round(Math.sqrt(number));
+        const nearestTenth = number.toFixed(1);
+        const nearestHundreth = number.toFixed(2);
+        const nearestThousandth = number.toFixed(3);
+        $("#result").val(`You typed: ${numberAsString}\nRounded to the nearest integer: ${int}\nSquare root rounded to integer: ${sqrt}\nRounded to the nearest tenth: ${nearestTenth}\nRounded to the nearest hundredth: ${nearestHundreth}\nRounded to the nearest thousandth: ${nearestThousandth}`);
     }
 });
