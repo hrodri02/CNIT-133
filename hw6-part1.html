@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/769642dbf3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
         <script src="hw6-part1.js"></script>
     </head>
     <body>
@@ -32,10 +33,19 @@
                 <a href='#'>HW 8</a>
             </div>
             <section class="hw6-section half-screen-width">
-                <h3>Input</h3>
+                <h3>Enter a number with at least 4 digits after the decimal</h3>
+                <form id="myform">
+                    <input class="full-width-black-input thin-white-border" type="number" name="number" id="number" placeholder="Enter number"/>
+                    <br><br>
+                    <div class="center-child-elements">
+                        <input type="submit" id="submitNumber" value="SUBMIT">
+                        <input type="reset" value="RESET" id="reset">
+                    </div>
+                </form>
             </section>
             <section class="hw6-section half-screen-width">
-                <h3>Output</h3>
+                <h3>Results</h3>
+                <textarea class="black-background-white-text thin-white-border" rows="6" cols="60" name="result" id="result"></textarea>
             </section>
         </div>
     </body>

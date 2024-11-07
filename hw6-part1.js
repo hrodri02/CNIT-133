@@ -13,4 +13,41 @@ $(document).ready(function() {
     $("#menu-bar").click(function() {
         $(".vertical-nav-bar").toggle();
     });
+
+    $.validator.addMethod("regex", function(value, element, regexp) {
+        return this.optional(element) || regexp.test(value);
+    }, "Please enter a valid value.");
+
+    $("#myform").validate({
+        rules: {
+            "number": {
+                required: true, 
+                number: true,
+                min: 0,
+                regex: /[-]?(\d)*(\.)(\d){4,4}/
+            }
+        },
+        messages: {
+            "number": {
+                regex: "Number must have four digits after the decimal."
+            }
+        },
+        submitHandler: function(form) {
+            displayResults();
+        },
+        errorPlacement: function (error, element) {
+            $("#result").val(error.text());
+        }
+    });
+
+    function displayResults() {
+        const numberAsString = $("#myform").find("#number").val();
+        const number = parseFloat(numberAsString);
+        const int = Math.round(number);
+        const sqrt = Math.round(Math.sqrt(number));
+        const nearestTenth = number.toFixed(1);
+        const nearestHundreth = number.toFixed(2);
+        const nearestThousandth = number.toFixed(3);
+        $("#result").val(`You typed: ${numberAsString}\nRounded to the nearest integer: ${int}\nSquare root rounded to integer: ${sqrt}\nRounded to the nearest tenth: ${nearestTenth}\nRounded to the nearest hundredth: ${nearestHundreth}\nRounded to the nearest thousandth: ${nearestThousandth}`);
+    }
 });
