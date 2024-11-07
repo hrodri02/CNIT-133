@@ -13,4 +13,28 @@ $(document).ready(function() {
     $("#menu-bar").click(function() {
         $(".vertical-nav-bar").toggle();
     });
+
+    $("#searchForCharacter").click(function() {
+        const longText = $("#long-text").val();
+        const c = $("#character").val();
+        const occurrences = countOccurrencesOfCharacterInString(longText, c.toLowerCase());
+        
+        if (occurrences > 0) {
+            $("#result").val(`'${c}' appears ${occurrences} times in the long text.`);
+        }
+        else {
+            
+        }
+    });
+
+    function countOccurrencesOfCharacterInString(text, c) {
+        let occurrences = 0;
+        for (let i = 0; i < text.length; i++) {
+            const curr = text.charAt(i).toLowerCase();
+            if (curr === c) {
+                occurrences += 1;
+            }
+        }
+        return occurrences;
+    }
 });
