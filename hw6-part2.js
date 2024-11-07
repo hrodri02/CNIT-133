@@ -23,7 +23,8 @@ $(document).ready(function() {
             $("#result").val(`'${c}' appears ${occurrences} times in the long text.`);
         }
         else {
-            
+            $("#result").val("");
+            openNewWindowWithMessage(`Search character '${c}' not found in the content you typed!`);
         }
     });
 
@@ -37,4 +38,35 @@ $(document).ready(function() {
         }
         return occurrences;
     }
+
+    function openNewWindowWithMessage(message)
+    {
+        // assemble HTML to pump into new window:
+        var myText = "<!DOCTYPE html>\n";
+        myText += "<html lang='en'>\n";
+        myText += "<head>\n";
+        myText += "<title>Popup Window</title>\n";
+        myText += "</head>\n";
+        myText += "<body>\n";
+        myText += "<div style='margin:0 auto;'>\n";
+        myText += `<p><strong>${message}</strong></p>\n`;
+        myText += "<input type='button' value='Close Window' onclick='window.close()'>\n";
+        myText += "</div>\n";
+        myText += "</body>\n";
+        myText += "</html>";
+        // open window on the upperleft of the screen
+        var newWindow = window.open("", "new_window",
+        "top=1,left=1,width=300,height=100");
+        newWindow.opener = null;   // this is for security!!!
+        // have browser focus on window
+        newWindow.focus();
+        // pump html into to this new opened window
+        newWindow.document.write(myText);
+        // tell browser that newWindow document is finished loading
+        newWindow.document.close();
+    }
+
+    $("#reset").click(function() {
+        $("#result").val("");
+    });
 });
