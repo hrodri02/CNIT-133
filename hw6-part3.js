@@ -28,7 +28,7 @@ $(document).ready(function() {
         messages: {
             "phone-number": {
                 required: "Pleae enter your phone number.",
-                regex: "The phone number must be in the format (XXX) XXX-XXXX."
+                regex: "The phone number must be in the following format: (XXX) XXX-XXXX."
             }
         },
         submitHandler: function(form) {
