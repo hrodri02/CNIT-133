@@ -111,13 +111,26 @@ nav a {
     background-color: #87CEEB;
 }
 
+main {
+    padding: 0 20%;
+    width: 90vw;
+    color: #ccc;
+}
+
+main img {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .hw2-part {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section, .hw6-section {
+#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section, .hw6-section, main {
     display: flex;
     flex-direction: column;
     justify-content: center;
