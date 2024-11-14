@@ -50,4 +50,8 @@ $(document).ready(function() {
         const nearestThousandth = number.toFixed(3);
         $("#result").val(`You typed: ${numberAsString}\nRounded to the nearest integer: ${int}\nSquare root rounded to integer: ${sqrt}\nRounded to the nearest tenth: ${nearestTenth}\nRounded to the nearest hundredth: ${nearestHundreth}\nRounded to the nearest thousandth: ${nearestThousandth}`);
     }
+
+    $("#reset").click(function() {
+        $("#result").val("");
+    });
 });
