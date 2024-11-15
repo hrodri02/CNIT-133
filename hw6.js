@@ -1,4 +1,41 @@
 $(document).ready(function() {
+    setupPageStructure();
+    addUniquePageContent();
+
+    function setupPageStructure () {
+        const metadata = {"hw_number": 6, "hw_title": "Objects"};
+        // Cache of the template
+        const template = document.getElementById("template-page-structure");
+        // Get the contents of the template
+        const templateHtml = template.innerHTML;
+        // Final HTML variable as empty string
+        let html = "";
+        // Loop through dataObject, replace placeholder tags
+        // with actual data, and generate final HTML
+        html += templateHtml.replace(/{{hw_number}}/g, metadata["hw_number"])
+                            .replace(/{{hw_title}}/g, metadata["hw_title"]);
+        document.body.innerHTML = html;
+    }
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section class="hw6-section">
+                <h3>Welcome to my implementation of HW 6 for my Javascript, jQuery, and AJAX class.</h3>
+                <ol>
+                    <li>
+                        Part 1 rounds a number to different place values and the square root of the number.
+                    </li>
+                    <li>
+                        Part 2 allows a user to search for a character in some text.
+                    </li>
+                    <li>
+                        Part 3 allows a user to enter a phone number and validates it.
+                    </li>
+                </ol>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

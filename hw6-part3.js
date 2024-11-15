@@ -1,4 +1,51 @@
 $(document).ready(function() {
+    setupPageStructure();
+    addUniquePageContent();
+
+    function setupPageStructure () {
+        const metadata = {"hw_number": 6, "hw_title": "Objects"};
+        // Cache of the template
+        const template = document.getElementById("template-page-structure");
+        // Get the contents of the template
+        const templateHtml = template.innerHTML;
+        // Final HTML variable as empty string
+        let html = "";
+        // Loop through dataObject, replace placeholder tags
+        // with actual data, and generate final HTML
+        html += templateHtml.replace(/{{hw_number}}/g, metadata["hw_number"])
+                            .replace(/{{hw_title}}/g, metadata["hw_title"]);
+        document.body.innerHTML = html;
+    }
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section class="hw6-section half-screen-width">
+                <h3>Phone Number</h3>
+                <form id="myform">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="phone-number">Enter your phone number:</label>
+                            </td>
+                            <td>
+                                <input class="full-width-black-input thin-white-border" type="text" name="phone-number" id="phone-number" placeholder="(XXX) XXX-XXXX">
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <div class="center-child-elements">
+                        <input type="submit" id="submitPhoneNumber" value="SUBMIT">
+                        <input type="reset" value="RESET" id="reset">
+                    </div>
+                </form>
+            </section>
+            <section class="hw6-section half-screen-width">
+                <h3>Result</h3>
+                <textarea class="black-background-white-text thin-white-border" rows="3" cols="40" name="result" id="result"></textarea>
+            </section>
+        `;
+    };
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];
