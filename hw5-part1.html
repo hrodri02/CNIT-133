@@ -8,90 +8,9 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/769642dbf3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="template-page-structure.js" id="template-page-structure"></script>
         <script src="hw5-part1.js"></script>
     </head>
     <body>
-        <header>
-            <i class="fa-solid fa-bars left-item" id="menu-bar"></i>
-            <h2 class="center-item">CNIT 133 Homework 5 - Arrays</h2>
-        </header>
-        <nav>
-            <a href="hw5.html">Home</a>
-            <a href="hw5-part1.html">Part 1</a>
-            <a href="hw5-part2.html">Part 2</a>
-            <a href="hw5-part3.html">Part 3</a>
-        </nav>
-        <div class="content-container row-flex-direction">
-            <div class='vertical-nav-bar'>
-                <a href='hw1.html'>HW 1</a>
-                <a href='hw2.html'>HW 2</a>
-                <a href='hw3.html'>HW 3</a>
-                <a href='hw4.html'>HW 4</a>
-                <a href='hw5.html'>HW 5</a>
-                <a href='hw6.html'>HW 6</a>
-                <a href='#'>HW 7</a>
-                <a href='#'>HW 8</a>
-            </div>
-            <section class="hw5-section half-screen-width">
-                <h3>User Info</h3>
-                <form name="myform">
-                    <input class="full-width-black-input thin-white-border" type="text" name="fullname" id="fullname" placeholder="Enter your full name"/>
-                    <br><br>
-                    <fieldset>
-                        <legend>Select your age group:</legend>
-                        <div>
-                            <input type="radio" id="less-than-21" name="age-group" value="less-than-21"/>
-                            <label for="less-than-21">Less than 21</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="21-50" name="age-group" value="21-50" />
-                            <label for="21-50">Between 21 and 50</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="older-than-50" name="age-group" value="older-than-50" />
-                            <label for="older-than-50">Older than 50</label>
-                        </div>
-                    </fieldset>
-                    <br><br>
-                    <fieldset>
-                        <legend>Select your web browser of choice:</legend>
-                        <div>
-                            <input type="checkbox" id="chrome" name="web-browser" value="chrome"/>
-                            <label for="chrome">Chrome</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="firefox" name="web-browser" value="firefox" />
-                            <label for="firefox">Firefox</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="edge" name="web-browser" value="edge" />
-                            <label for="edge">Edge</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="safari" name="web-browser" value="safari" />
-                            <label for="safari">Safari</label>
-                        </div>
-                    </fieldset>
-                    <br><br>
-                    <select name="movie-genres" class="full-width-black-background thin-white-border" id="movie-genres">
-                        <option value="">-- Select Genre --</option>
-                        <option value="action">Action</option>
-                        <option value="comedy">Comedy</option>
-                        <option value="drama">Drama</option>
-                        <option value="documentary">Documentary</option>
-                        <option value="science-fiction">Science Fiction</option>
-                    </select>
-                    <br><br>
-                    <div class="center-child-elements">
-                        <input type="button" id="submitUserData" value="SUBMIT">
-                        <input type="reset" value="RESET" id="resetInputs">
-                    </div>
-                </form>
-            </section>
-            <section class="hw5-section half-screen-width">
-                <h3>Results</h3>
-                <textarea class="black-background-white-text thin-white-border" rows="3" cols="40" name="result" id="result"></textarea>
-            </section>
-        </div>
     </body>
 </html>

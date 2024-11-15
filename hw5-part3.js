@@ -1,4 +1,42 @@
 $(document).ready(function() {
+    setupPageStructure();
+    addUniquePageContent();
+
+    function setupPageStructure () {
+        const metadata = {"hw_number": 5, "hw_title": "Arrays"};
+        // Cache of the template
+        const template = document.getElementById("template-page-structure");
+        // Get the contents of the template
+        const templateHtml = template.innerHTML;
+        // Final HTML variable as empty string
+        let html = "";
+        // Loop through dataObject, replace placeholder tags
+        // with actual data, and generate final HTML
+        html += templateHtml.replace(/{{hw_number}}/g, metadata["hw_number"])
+                            .replace(/{{hw_title}}/g, metadata["hw_title"]);
+        document.body.innerHTML = html;
+    }
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section class="hw5-section half-screen-width">
+                <h3>Enter the full name of a state or the two-letter abbreviation</h3>
+                <form name="myform">
+                    <input class="full-width-black-input thin-white-border" type="text" name="state" id="state" placeholder="Enter a state name"/>
+                    <br><br>
+                    <div class="center-child-elements">
+                        <input type="button" id="submitStateName" value="SUBMIT">
+                        <input type="reset" value="RESET" id="reset">
+                    </div>
+                </form>
+            </section>
+            <section class="hw5-section half-screen-width">
+                <h3>Results</h3>
+                <textarea class="black-background-white-text thin-white-border" rows="4" cols="60" name="result" id="result"></textarea>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];
