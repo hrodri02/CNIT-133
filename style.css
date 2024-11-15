@@ -364,6 +364,10 @@ div button {
     text-align: center;
 }
 
+.full-parent-width {
+    width: 100%;
+}
+
 @media screen and (max-width: 640px) {
     .content-container {
       flex-direction: column;
