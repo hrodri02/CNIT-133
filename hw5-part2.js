@@ -1,4 +1,33 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 5, "hw_title": "Arrays"});
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section class="hw5-section">
+                <h3>Choose your destination (using onchange event handler)</h3>
+                <form name="form1">
+                    <select name="destList1" id="destList1" class="full-width-black-background thin-white-border">
+                        <option value="">Choose Destination</option>
+                        <option value="https://www.ccsf.edu">CCSF</option>
+                        <option value="https://www.youtube.com">YouTube</option>
+                        <option value="https://www.google.com">Google</option>
+                    </select>
+                </form>
+                <h3>Choose your destination (using onclick event handler)</h3>
+                <form name="form2">
+                    <select name="destList2" class="black-background-white-text thin-white-border">
+                        <option value="">Choose Destination</option>
+                        <option value="https://www.ccsf.edu">CCSF</option>
+                        <option value="https://www.youtube.com">YouTube</option>
+                        <option value="https://www.google.com">Google</option>
+                    </select>
+                    <input type="button" value="Go" id="go">
+                </form>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

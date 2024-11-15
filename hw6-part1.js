@@ -1,4 +1,36 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 6, "hw_title": "Objects"}, document);
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section class="hw6-section half-screen-width">
+                <h3>Input</h3>
+                <form id="myform">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="number">Enter a number with at least 4 digits after the decimal:</label>
+                            </td>
+                            <td>
+                                <input class="full-width-black-input thin-white-border" type="number" name="number" id="number" placeholder="Enter number">
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <div class="center-child-elements">
+                        <input type="submit" id="submitNumber" value="SUBMIT">
+                        <input type="reset" value="RESET" id="reset">
+                    </div>
+                </form>
+            </section>
+            <section class="hw6-section half-screen-width">
+                <h3>Results</h3>
+                <textarea class="black-background-white-text thin-white-border" rows="6" cols="60" name="result" id="result"></textarea>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

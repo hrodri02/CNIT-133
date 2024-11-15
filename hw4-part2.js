@@ -1,4 +1,15 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 4, "hw_title": "Looping Statements"});
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section id="hw4-section">
+                <h3>Learn About Compound Interest</h3>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

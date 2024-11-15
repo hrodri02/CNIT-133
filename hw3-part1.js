@@ -1,4 +1,40 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 3, "hw_title": "Functions"});
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section id="hw3-section">
+                <h3>Calculate a Student's Grade</h3>
+                <form name="myform">
+                    <table>
+                        <tr>
+                            <td><label for='hwAvg'>Homework Average</label></td>
+                            <td><input type="number" name="hwAvg" id="hwAvg" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='midterm'>Midterm Grade</label></td>
+                            <td><input type="number" name="midterm" id="midterm" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='finalExam'>Final Exam Grade</label></td>
+                            <td><input type="number" name="finalExam" id="finalExam" value="0" style='text-align:right;'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='participation'>Participation Grade</label></td>
+                            <td><input type="number" name="participation" id="participation" value="0" style='text-align:right;'></td>
+                        </tr>
+                    </table>
+                    <br><label>Results</label><br>
+                    <textarea rows="3" cols="40" name="result" id="result"></textarea>
+                    <br><br>
+                    <input type="button" id="calculateFinalGrade" value="SUBMIT">
+                    <input type="reset" value="RESET">
+                </form>
+            </section>
+        `;
+    }
+
     // update the selected page in the nav bar
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');

@@ -1,4 +1,29 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 3, "hw_title": "Functions"});
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section id="hw3-section">
+                <h3>Practice Multiplying One-Digit Whole Numbers</h3>
+                <form id="myform">
+                    <table>
+                        <tr>
+                            <td><label for='product' id="product-label"></label></td>
+                            <td><input class="full-width-black-input" type="number" name="product" id="product" style='text-align:right;'></td>
+                        </tr>
+                    </table>
+                    <br><label>Results</label><br>
+                    <textarea rows="2" cols="40" name="result" id="hw3-part3-textarea"></textarea>
+                    <br><br>
+                    <input type="submit" id="checkProduct" value="SUBMIT">
+                    <input type="button" id="continue" value="YES">
+                    <input type="button" id="stop" value="NO">
+                </form>
+            </section>
+        `;
+    }
+
     // update the selected page in the nav bar
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');

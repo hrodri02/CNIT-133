@@ -1,4 +1,94 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 4, "hw_title": "Looping Statements"});
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+<section id="hw4-section">
+                <h3>HW 4 Part 1</h3>
+                <div id="problem-container-1" class="problem-container column-flex-direction">
+                    <div class="container-for-perfect-centering">
+                        <h4>The sum and product of every fourth integer between 5 to 25 (inclusive)</h4>
+                    </div>
+                    <div class="row-flex-direction">
+                        <div class="loop-problem-container container-for-perfect-centering">
+                            <pre>
+                                <code>
+let sum = 0;
+let product = 1;
+
+for (let i = <div id="area1" class="droppable"></div>; i &lt;= <div id="area2" class="droppable"></div>; i += <div id="area3" class="droppable"></div>) {
+    sum += arr[i];
+    product *= arr[i];
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="results-area">
+                            <p id="first-sum-product"></p>
+                        </div>
+                    </div>
+                    <div class="column-flex-direction">
+                        <p>Drag the elements to the right place to get the sum and product.</p>
+                        <div id='draggable-container-1' class="draggable-container row-flex-direction space-around">
+                            <div id="start-1" class="draggable">
+                                <p>5</p>
+                            </div>
+                            <div id="end-1" class="draggable">
+                                <p>25</p>
+                            </div>
+                            <div id="step-1" class="draggable">
+                                <p>4</p>
+                            </div>
+                        </div>
+                        <button id="reset-first-problem" class="reset-button">Reset</button>
+                    </div>
+                </div>
+                <hr class="full-width-black-background">
+                <div id="problem-container-2" class="problem-container column-flex-direction">
+                    <div class="container-for-perfect-centering">
+                        <h4>The sum and product of every third integer between 3 to 18 (inclusive)</h4>
+                    </div>
+                    <div class="row-flex-direction">
+                        <div class="loop-problem-container container-for-perfect-centering">
+                            <pre>
+                                <code>
+let sum = 0;
+let product = 1;
+
+let i = <div id="area4" class="droppable"></div>;
+while (i &lt;= <div id="area5" class="droppable"></div>;) {
+    sum += arr[i];
+    product *= arr[i];
+    i += <div id="area6" class="droppable"></div>
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="results-area">
+                            <p id="second-sum-product"></p>
+                        </div>
+                    </div>
+                    <div class="column-flex-direction">
+                        <p>Drag the elements to the right place to get the sum and product.</p>
+                        <div id="draggable-container-2" class="draggable-container flex-container row-flex-direction space-around">
+                            <div id="start-2" class="draggable">
+                                <p>3</p>
+                            </div>
+                            <div id="end-2" class="draggable">
+                                <p>18</p>
+                            </div>
+                            <div id="step-2" class="draggable">
+                                <p>3</p>
+                            </div>
+                        </div>
+                        <button id="reset-second-problem" class="reset-button">Reset</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

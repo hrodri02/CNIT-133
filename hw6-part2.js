@@ -1,4 +1,45 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 6, "hw_title": "Objects"}, document);
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section class="hw6-section half-screen-width">
+                <h3>Input Text and Character</h3>
+                <form class="align-center" id="searchCharacterForm">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="long-text">Enter some text:</label>
+                            </td>
+                            <td>
+                                <textarea class="black-background-white-text thin-white-border" rows="8" cols="50" name="input-text" id="long-text" placeholder="Enter some text"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="character">Enter a character:</label>
+                            </td>
+                            <td>
+                                <input class="full-width-black-input" type="text" name="character" id="character" placeholder="Enter a character" maxlength="1">
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <div class="center-child-elements">
+                        <input type="button" id="searchForCharacter" value="SUBMIT">
+                        <input type="reset" value="RESET" id="reset">
+                    </div>
+                </form>
+            </section>
+            <section class="hw6-section half-screen-width">
+                <h3>Results</h3>
+                <textarea class="black-background-white-text thin-white-border" rows="6" cols="50" name="result" id="result"></textarea>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

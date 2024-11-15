@@ -1,4 +1,36 @@
 $(document).ready(function() {
+    setupPage({"hw_number": 6, "hw_title": "Objects"}, document);
+    addUniquePageContent();
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section class="hw6-section half-screen-width">
+                <h3>Phone Number</h3>
+                <form id="myform">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="phone-number">Enter your phone number:</label>
+                            </td>
+                            <td>
+                                <input class="full-width-black-input thin-white-border" type="text" name="phone-number" id="phone-number" placeholder="(XXX) XXX-XXXX">
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <div class="center-child-elements">
+                        <input type="submit" id="submitPhoneNumber" value="SUBMIT">
+                        <input type="reset" value="RESET" id="reset">
+                    </div>
+                </form>
+            </section>
+            <section class="hw6-section half-screen-width">
+                <h3>Result</h3>
+                <textarea class="black-background-white-text thin-white-border" rows="3" cols="40" name="result" id="result"></textarea>
+            </section>
+        `;
+    };
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];

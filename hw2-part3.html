@@ -8,74 +8,9 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/769642dbf3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="template-page-structure.js" id="template-page-structure"></script>
         <script src="hw2-part3.js"></script>
     </head>
     <body>
-        <header>
-            <i class="fa-solid fa-bars left-item" id="menu-bar"></i>
-            <h2 class="center-item">CNIT 133 Homework 2 - Basic Operations</h2>
-        </header>
-        <nav>
-            <a href="hw2.html">Home</a>
-            <a href="hw2-part1.html">Part 1</a>
-            <a href="hw2-part2.html">Part 2</a>
-            <a href="hw2-part3.html">Part 3</a>
-        </nav>
-        <div class='content-container row-flex-direction'>
-            <div class='vertical-nav-bar'>
-                <a href='hw1.html'>HW 1</a>
-                <a href='hw2.html'>HW 2</a>
-                <a href='hw3.html'>HW 3</a>
-                <a href='hw4.html'>HW 4</a>
-                <a href='hw5.html'>HW 5</a>
-                <a href='hw6.html'>HW 6</a>
-                <a href='#'>HW 7</a>
-                <a href='#'>HW 8</a>
-            </div>
-            <section id="hw2-part3-section">
-                <h3>Extra Credit</h3>
-                <div id="currencies-container">
-                    <div id="instructions-container">
-                        <button type="button" id="hw2-part3-instructions-btn">Click to Show/Hide Instructions</button>
-                        <p id="instructions" style="display:none">The foreign exchange rates in June 2021. Enter a dollar amount in the table below to see the corresponding foreign exchange values</p>
-                    </div>
-                    <form name="myform" id="currencies-form">
-                        <table id="hw2-table-part3">
-                            <tr>
-                                <th colspan="3">Monetary Exchange Rates</th>
-                            </tr>
-                            <tr>
-                                <th>Currency</th><th>Rate</th><th>Value</th>
-                            </tr>
-                            <tr>
-                                <td>Euro</td><td>0.92</td>
-                                <td><input class="full-width-black-input" type="number" name="euro-amount" id="euro-amount" value="0" readonly></td>
-                            </tr>
-                            <tr>
-                                <td>Canadian Dollar</td><td>1.38</td>
-                                <td><input class="full-width-black-input" type="number" name="canadian-dollar-amount" id="canadian-dollar-amount" value="0" readonly></td>
-                            </tr>
-                            <tr>
-                                <td>Hong Kong Dollar</td><td>7.81</td>
-                                <td><input class="full-width-black-input" type="number" name="hong-kong-dollar-amount" id="hong-kong-dollar-amount" value="0" readonly></td>
-                            </tr>
-                            <tr>
-                                <td>Japanese Yen</td><td>156.73</td>
-                                <td><input class="full-width-black-input" type="number" name="japanese-yen-amount" id="japanese-yen-amount" value="0" readonly></td>
-                            </tr>
-                            <tr>
-                                <td>Mexican Peso</td><td>18.41</td>
-                                <td><input class="full-width-black-input" type="number" name="mexican-peso-amount" id="mexican-peso-amount" value="0" readonly></td>
-                            </tr>
-                        </table>
-                        <br>
-                        <div>
-                            <label style="font-weight: bold;">Enter the Amount of U.S. Dollars:</label>
-                            <input type="number" name="us-dollar-amount" id="us-dollar-amount" value="0" step="0.01" style='text-align:right;'>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </div>
     </body>
 </html>
