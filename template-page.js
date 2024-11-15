@@ -22,7 +22,6 @@ const templateHTML = `
     </div>
 </div>
 `;
-document.getElementById("template-page-structure").innerHTML = templateHTML;
 
 function setupPage(metadata) {
     let html = "";
