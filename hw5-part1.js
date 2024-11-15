@@ -7,7 +7,12 @@ $(document).ready(function() {
             <section class="hw5-section half-screen-width">
                 <h3>User Info</h3>
                 <form name="myform">
-                    <input class="full-width-black-input thin-white-border" type="text" name="fullname" id="fullname" placeholder="Enter your full name">
+                    <table class="full-parent-width">
+                        <tr>
+                            <td><label for="fullname">Fullname: </label></td>
+                            <td><input class="full-width-black-input thin-white-border" type="text" name="fullname" id="fullname" placeholder="Enter your full name"></td>
+                        </tr>
+                    </table>
                     <br><br>
                     <fieldset>
                         <legend>Select your age group:</legend>
