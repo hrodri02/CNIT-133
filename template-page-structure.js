@@ -23,3 +23,11 @@ const templateHTML = `
 </div>
 `;
 document.getElementById("template-page-structure").innerHTML = templateHTML;
+
+function setupPage(metadata) {
+    let html = "";
+    
+    html += templateHTML.replace(/{{hw_number}}/g, metadata["hw_number"])
+                        .replace(/{{hw_title}}/g, metadata["hw_title"]);
+    document.body.innerHTML = html;
+}
