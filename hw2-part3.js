@@ -1,4 +1,71 @@
 $(document).ready(function() {
+    setupPageStructure();
+    addUniquePageContent();
+
+    function setupPageStructure () {
+        const metadata = {"hw_number": 2, "hw_title": "Basic Operations"};
+        // Cache of the template
+        const template = document.getElementById("template-page-structure");
+        // Get the contents of the template
+        const templateHtml = template.innerHTML;
+        // Final HTML variable as empty string
+        let html = "";
+        // Loop through dataObject, replace placeholder tags
+        // with actual data, and generate final HTML
+        html += templateHtml.replace(/{{hw_number}}/g, metadata["hw_number"])
+                            .replace(/{{hw_title}}/g, metadata["hw_title"]);
+        document.body.innerHTML = html;
+    }
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section id="hw2-part3-section">
+                <h3>Extra Credit</h3>
+                <div id="currencies-container">
+                    <div id="instructions-container">
+                        <button type="button" id="hw2-part3-instructions-btn">Click to Show/Hide Instructions</button>
+                        <p id="instructions" style="display:none">The foreign exchange rates in June 2021. Enter a dollar amount in the table below to see the corresponding foreign exchange values</p>
+                    </div>
+                    <form name="myform" id="currencies-form">
+                        <table id="hw2-table-part3">
+                            <tr>
+                                <th colspan="3">Monetary Exchange Rates</th>
+                            </tr>
+                            <tr>
+                                <th>Currency</th><th>Rate</th><th>Value</th>
+                            </tr>
+                            <tr>
+                                <td>Euro</td><td>0.92</td>
+                                <td><input class="full-width-black-input" type="number" name="euro-amount" id="euro-amount" value="0" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Canadian Dollar</td><td>1.38</td>
+                                <td><input class="full-width-black-input" type="number" name="canadian-dollar-amount" id="canadian-dollar-amount" value="0" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Hong Kong Dollar</td><td>7.81</td>
+                                <td><input class="full-width-black-input" type="number" name="hong-kong-dollar-amount" id="hong-kong-dollar-amount" value="0" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Japanese Yen</td><td>156.73</td>
+                                <td><input class="full-width-black-input" type="number" name="japanese-yen-amount" id="japanese-yen-amount" value="0" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Mexican Peso</td><td>18.41</td>
+                                <td><input class="full-width-black-input" type="number" name="mexican-peso-amount" id="mexican-peso-amount" value="0" readonly></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div>
+                            <label style="font-weight: bold;">Enter the Amount of U.S. Dollars:</label>
+                            <input type="number" name="us-dollar-amount" id="us-dollar-amount" value="0" step="0.01" style='text-align:right;'>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        `;
+    }
+
     // update the selected page in the nav bar
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
