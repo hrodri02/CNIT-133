@@ -1,4 +1,48 @@
 $(document).ready(function() {
+    setupPageStructure();
+    addUniquePageContent();
+
+    function setupPageStructure () {
+        const metadata = {"hw_number": 4, "hw_title": "Looping Statements"};
+        // Cache of the template
+        const template = document.getElementById("template-page-structure");
+        // Get the contents of the template
+        const templateHtml = template.innerHTML;
+        // Final HTML variable as empty string
+        let html = "";
+        // Loop through dataObject, replace placeholder tags
+        // with actual data, and generate final HTML
+        html += templateHtml.replace(/{{hw_number}}/g, metadata["hw_number"])
+                            .replace(/{{hw_title}}/g, metadata["hw_title"]);
+        document.body.innerHTML = html;
+    }
+
+    function addUniquePageContent() {
+        document.getElementsByClassName("content-container")[0].innerHTML += `
+            <section id="hw4-section">
+                <h3>Display a Square</h3>
+                <form name="myform" id="hw4-part3-form">
+                    <table>
+                        <tr>
+                            <td><label for='side-length' id="side-length-label">Enter a side length between 2 and 10 (inclusive):</label></td>
+                            <td><input class="full-width-black-input" type="number" name="side-length" id="side-length" style='text-align:right;'></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <pre>
+                        <p id="drawing-area"></p>
+                    </pre>
+                    <div id="drawing-area-2"></div>
+                    <br>
+                    <div>
+                        <input type="submit" id="drawSquare" value="DRAW SQUARE">
+                        <input type="reset" id="resetDrawingArea" value="RESET">
+                    </div>
+                </form>
+            </section>
+        `;
+    }
+
     const currentPath = window.location.pathname;
     const parts = currentPath.split('/');
     const currentPage = parts[parts.length - 1];
