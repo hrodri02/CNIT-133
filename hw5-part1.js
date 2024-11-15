@@ -50,14 +50,23 @@ $(document).ready(function() {
                         </div>
                     </fieldset>
                     <br><br>
-                    <select name="movie-genres" class="full-width-black-background thin-white-border" id="movie-genres">
-                        <option value="">-- Select Genre --</option>
-                        <option value="action">Action</option>
-                        <option value="comedy">Comedy</option>
-                        <option value="drama">Drama</option>
-                        <option value="documentary">Documentary</option>
-                        <option value="science-fiction">Science Fiction</option>
-                    </select>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="movie-genres">Select a movie genre:</label>
+                            </td>
+                            <td>
+                                <select name="movie-genres" class="full-width-black-background thin-white-border" id="movie-genres">
+                                    <option value="">-- Select Genre --</option>
+                                    <option value="action">Action</option>
+                                    <option value="comedy">Comedy</option>
+                                    <option value="drama">Drama</option>
+                                    <option value="documentary">Documentary</option>
+                                    <option value="science-fiction">Science Fiction</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
                     <br><br>
                     <div class="center-child-elements">
                         <input type="button" id="submitUserData" value="SUBMIT">
