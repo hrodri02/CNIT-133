@@ -7,7 +7,16 @@ $(document).ready(function() {
             <section class="hw5-section half-screen-width">
                 <h3>Enter the full name of a state or the two-letter abbreviation</h3>
                 <form name="myform">
-                    <input class="full-width-black-input thin-white-border" type="text" name="state" id="state" placeholder="Enter a state name"/>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="state">Enter a state name:</label>
+                            </td>
+                            <td>
+                                <input class="full-width-black-input thin-white-border" type="text" name="state" id="state" placeholder="e.g., California or CA">
+                            </td>
+                        </tr>
+                    </table>
                     <br><br>
                     <div class="center-child-elements">
                         <input type="button" id="submitStateName" value="SUBMIT">

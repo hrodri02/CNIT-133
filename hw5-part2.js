@@ -5,24 +5,42 @@ $(document).ready(function() {
     function addUniquePageContent() {
         document.getElementsByClassName("content-container")[0].innerHTML += `
             <section class="hw5-section">
-                <h3>Choose your destination (using onchange event handler)</h3>
+                <h3>Choose your destination</h3>
                 <form name="form1">
-                    <select name="destList1" id="destList1" class="full-width-black-background thin-white-border">
-                        <option value="">Choose Destination</option>
-                        <option value="https://www.ccsf.edu">CCSF</option>
-                        <option value="https://www.youtube.com">YouTube</option>
-                        <option value="https://www.google.com">Google</option>
-                    </select>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="destList1">Select a destination (opens automatically)<label>
+                            </td>
+                            <td>
+                                <select name="destList1" id="destList1" class="full-width-black-background thin-white-border">
+                                    <option value="">Choose Destination</option>
+                                    <option value="https://www.ccsf.edu">CCSF</option>
+                                    <option value="https://www.youtube.com">YouTube</option>
+                                    <option value="https://www.google.com">Google</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
                 </form>
-                <h3>Choose your destination (using onclick event handler)</h3>
+                <br>
                 <form name="form2">
-                    <select name="destList2" class="black-background-white-text thin-white-border">
-                        <option value="">Choose Destination</option>
-                        <option value="https://www.ccsf.edu">CCSF</option>
-                        <option value="https://www.youtube.com">YouTube</option>
-                        <option value="https://www.google.com">Google</option>
-                    </select>
-                    <input type="button" value="Go" id="go">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="destList1">Select a destination, then click Go.<label>
+                            </td>
+                            <td>
+                                <select name="destList2" class="black-background-white-text thin-white-border">
+                                    <option value="">Choose Destination</option>
+                                    <option value="https://www.ccsf.edu">CCSF</option>
+                                    <option value="https://www.youtube.com">YouTube</option>
+                                    <option value="https://www.google.com">Google</option>
+                                </select>
+                                <input type="button" value="Go" id="go">
+                            </td>
+                        </tr>
+                    </table>
                 </form>
             </section>
         `;
