@@ -130,7 +130,7 @@ main img {
     align-items: center;
 }
 
-#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section, .hw6-section, main {
+#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section, .hw6-section, main, .hw7-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -366,6 +366,10 @@ div button {
 
 .full-parent-width {
     width: 100%;
+}
+
+.hw7-section {
+    padding: 0 2em;
 }
 
 @media screen and (max-width: 640px) {
