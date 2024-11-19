@@ -145,4 +145,13 @@ $(document).ready(function() {
             });
         }
     });
+
+    $("#font-size").change(function() {
+        const fontSize = $("#font-size").val();
+        if (fontSize !== "") {
+            $("#paragraph-section").children("p").each(function() {
+                $(this).css("font-size", fontSize);
+            });
+        }
+    });
 });
