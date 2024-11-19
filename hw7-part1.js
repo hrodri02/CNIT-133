@@ -106,4 +106,43 @@ $(document).ready(function() {
             $("#paragraph-section").css("background-color", color);
         }
     });
+
+    $("#bold").change(function() {
+        if ($("#bold").is(":checked")) {
+            $("#paragraph-section").children("p").each(function() {
+                $(this).addClass("p-bold");
+            });
+        }
+        else {
+            $("#paragraph-section").children("p").each(function() {
+                $(this).removeClass("p-bold");
+            });
+        }
+    });
+
+    $("#italic").change(function() {
+        if ($("#italic").is(":checked")) {
+            $("#paragraph-section").children("p").each(function() {
+                $(this).addClass("p-italic");
+            });
+        }
+        else {
+            $("#paragraph-section").children("p").each(function() {
+                $(this).removeClass("p-italic");
+            });
+        }
+    });
+
+    $("#underline").change(function() {
+        if ($("#underline").is(":checked")) {
+            $("#paragraph-section").children("p").each(function() {
+                $(this).addClass("p-underline");
+            });
+        }
+        else {
+            $("#paragraph-section").children("p").each(function() {
+                $(this).removeClass("p-underline");
+            });
+        }
+    });
 });

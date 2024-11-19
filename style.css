@@ -372,6 +372,18 @@ div button {
     padding: 0 2em;
 }
 
+.p-bold {
+    font-weight: bold;
+}
+
+.p-italic {
+    font-style: italic;
+}
+
+.p-underline {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 640px) {
     .content-container {
       flex-direction: column;
