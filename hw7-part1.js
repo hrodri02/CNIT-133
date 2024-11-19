@@ -10,15 +10,15 @@ $(document).ready(function() {
                     <fieldset>
                         <legend>Select a Background Color:</legend>
                         <div>
-                            <input type="radio" id="red" name="background-color" value="red">
+                            <input type="radio" id="red" name="background-color" value="#800000">
                             <label for="red">Red</label>
                         </div>
                         <div>
-                            <input type="radio" id="blue" name="background-color" value="blue">
+                            <input type="radio" id="blue" name="background-color" value="#000080">
                             <label for="blue">Blue</label>
                         </div>
                         <div>
-                            <input type="radio" id="dark-gray" name="background-color" value="dark-gray">
+                            <input type="radio" id="dark-gray" name="background-color" value="#222">
                             <label for="dark-gray">Dark Gray</label>
                         </div>
                     </fieldset>
@@ -56,7 +56,7 @@ $(document).ready(function() {
                     </table>
                 </form>
             </section>
-            <section class="hw7-section half-screen-width">
+            <section class="hw7-section half-screen-width" id="paragraph-section">
                 <h3>Change Me</h3>
                 <p>
                 The sun dipped below the horizon, casting long shadows across the quiet town. Streets, usually buzzing with activity, were now empty, save for a lone streetlamp flickering in the distance. The air, cool and crisp with the onset of evening, carried the scent of damp earth and pine trees. It was the kind of night where everything seemed suspended in time, like the world was holding its breath, waiting for something—anything—to break the stillness. Yet, in the distance, the faint hum of an approaching car reminded the town that life continued, just beyond the threshold of silence.
@@ -83,6 +83,27 @@ $(document).ready(function() {
         // Check if the href attribute matches the current path
         if ($(this).attr('href') === currentPage) {
             $(this).addClass('nav-active'); // Add the 'active' class
+        }
+    });
+
+    $("#red").change(function() {
+        if ($("#red").is(":checked")) {
+            const color = $("#red").val();
+            $("#paragraph-section").css("background-color", color);
+        }
+    });
+
+    $("#blue").change(function() {
+        if ($("#blue").is(":checked")) {
+            const color = $("#blue").val();
+            $("#paragraph-section").css("background-color", color);
+        }
+    });
+
+    $("#dark-gray").change(function() {
+        if ($("#dark-gray").is(":checked")) {
+            const color = $("#dark-gray").val();
+            $("#paragraph-section").css("background-color", color);
         }
     });
 });
