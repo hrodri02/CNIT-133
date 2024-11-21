@@ -33,16 +33,6 @@ $(document).ready(function() {
         `;
     }
 
-    $('.submenu').hide().removeClass('fallback');
-    $('.dropdown').hover(
-        function () {
-            $('ul', this).stop().slideDown(200);
-        },
-        function () {
-            $('ul', this).stop().slideUp(200);
-        }
-    );
-
     $("#menu-bar").click(function() {
         $(".vertical-nav-bar").toggle();
     });
@@ -57,4 +47,14 @@ $(document).ready(function() {
             $(this).addClass('nav-active'); // Add the 'active' class
         }
     });
+
+    $('.submenu').hide().removeClass('fallback');
+    $('.dropdown').hover(
+        function () {
+            $('ul', this).stop().slideDown(200);
+        },
+        function () {
+            $('ul', this).stop().slideUp(200);
+        }
+    );
 });
