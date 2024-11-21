@@ -7,7 +7,6 @@ const templateHTML = `
     <a href="hw{{hw_number}}.html">Home</a>
     <a href="hw{{hw_number}}-part1.html">Part 1</a>
     <a href="hw{{hw_number}}-part2.html">Part 2</a>
-    <a href="hw{{hw_number}}-part3.html">Part 3</a>
 </nav>
 <div class='content-container row-flex-direction'>
     <div class='vertical-nav-bar'>
