@@ -415,11 +415,14 @@ li.dropdown { display: inline-block; position: relative; }
 */
 .submenu {
     list-style: none;
-    display: none;
     position: absolute; 
     background-color: #f6f6f6;
     padding: 0;
     z-index: 1;
+}
+
+.fallback {
+    display: none;
 }
 
 .submenu li {
@@ -435,7 +438,7 @@ li.dropdown { display: inline-block; position: relative; }
 
 .submenu a:hover {background-color: #87CEEB;}
 
-.dropdown:hover .submenu {
+.dropdown:hover .fallback {
     display: block;
 }
 
