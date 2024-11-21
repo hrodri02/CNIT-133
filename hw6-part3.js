@@ -54,7 +54,7 @@ $(document).ready(function() {
         rules: {
             "phone-number": {
                 required: true,
-                regex: /\((\d){3,3}\) (\d){3,3}-(\d){4,4}/
+                regex: /^\((\d){3,3}\) (\d){3,3}-(\d){4,4}$/
             }
         },
         messages: {
