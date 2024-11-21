@@ -112,6 +112,7 @@ nav a {
 }
 
 main {
+    padding: 0 20%;
     margin: 0 auto;
     width: 90vw;
     color: #ccc;
@@ -443,6 +444,10 @@ li.dropdown { display: inline-block; position: relative; }
 }
 
 @media screen and (max-width: 640px) {
+    main {
+        padding: 0;
+    }
+
     .content-container {
       flex-direction: column;
     }
