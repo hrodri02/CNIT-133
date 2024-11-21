@@ -8,10 +8,10 @@ $(document).ready(function() {
                 <h3>Welcome to my implementation of HW 7 for my Javascript, jQuery, and AJAX class.</h3>
                 <ol>
                     <li>
-                        Part 1.
+                        Part 1 provides a form to change the styles of three paragraphs.
                     </li>
                     <li>
-                        Part 2.
+                        Part 2 contains a horizonal navigation bar with drop down menus.
                     </li>
                 </ol>
             </main>
