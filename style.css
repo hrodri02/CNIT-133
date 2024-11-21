@@ -384,6 +384,61 @@ div button {
     text-decoration: underline;
 }
 
+/* 
+	LEVEL ONE
+*/
+.horizontal-nav-bar { 
+    list-style: none;
+    padding: 0;
+    background-color: #222; 
+}
+
+.horizontal-nav-bar li {
+    float: left; 
+}
+
+.dropbtn {
+    display: inline-block;
+    font-weight: bold;
+    color: #ccc;
+    background-color: #222;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropbtn { color: #000; background-color: #87CEEB; }
+
+li.dropdown { display: inline-block; position: relative; }
+
+/* 
+	LEVEL TWO
+*/
+.submenu {
+    list-style: none;
+    display: none;
+    position: absolute; 
+    background-color: #f6f6f6;
+    padding: 0;
+    z-index: 1;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu li a { 
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.submenu a:hover {background-color: #87CEEB;}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
 @media screen and (max-width: 640px) {
     .content-container {
       flex-direction: column;
@@ -395,4 +450,4 @@ div button {
         flex-direction: row;
         flex-wrap: wrap;
     }
-  }
+}
