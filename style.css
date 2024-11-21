@@ -112,7 +112,7 @@ nav a {
 }
 
 main {
-    padding: 0 20%;
+    margin: 0 auto;
     width: 90vw;
     color: #ccc;
 }
