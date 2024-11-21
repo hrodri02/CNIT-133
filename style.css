@@ -277,7 +277,7 @@ div button {
     width: 20px;
 }
 
-.half-screen-width {
+.adaptable-width {
     width: 50vw;
 }
 
@@ -445,6 +445,10 @@ li.dropdown { display: inline-block; position: relative; }
 @media screen and (max-width: 640px) {
     .content-container {
       flex-direction: column;
+    }
+
+    .adaptable-width {
+        width: 100vw;
     }
 
     .vertical-nav-bar {

@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     function addUniquePageContent() {
         document.getElementsByClassName("content-container")[0].innerHTML += `
-            <section class="hw3-part2-section half-screen-width">
+            <section class="hw3-part2-section adaptable-width">
                 <h3>Enter your name and amount of each item sold</h3>
                 <form name="myform" id="myform">
                     <table class="hw3-part2-table">
@@ -36,7 +36,7 @@ $(document).ready(function() {
                     <input type="reset" id="resetForm" value="Clear Form">
                 </form>
             </section>
-            <section class="hw3-part2-section half-screen-width">
+            <section class="hw3-part2-section adaptable-width">
                 <h3>Results</h3>
                 <table class="hw3-part2-table">
                     <tr>

@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     function addUniquePageContent() {
         document.getElementsByClassName("content-container")[0].innerHTML += `
-             <section class="hw7-section half-screen-width">
+             <section class="hw7-section adaptable-width">
                 <h3>Change Styles</h3>
                 <form>
                     <fieldset>
@@ -56,7 +56,7 @@ $(document).ready(function() {
                     </table>
                 </form>
             </section>
-            <section class="hw7-section half-screen-width" id="paragraph-section">
+            <section class="hw7-section adaptable-width" id="paragraph-section">
                 <h3>Change Me</h3>
                 <p>
                 The sun dipped below the horizon, casting long shadows across the quiet town. Streets, usually buzzing with activity, were now empty, save for a lone streetlamp flickering in the distance. The air, cool and crisp with the onset of evening, carried the scent of damp earth and pine trees. It was the kind of night where everything seemed suspended in time, like the world was holding its breath, waiting for something—anything—to break the stillness. Yet, in the distance, the faint hum of an approaching car reminded the town that life continued, just beyond the threshold of silence.

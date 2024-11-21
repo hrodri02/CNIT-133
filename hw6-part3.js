@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     function addUniquePageContent() {
         document.getElementsByClassName("content-container")[0].innerHTML += `
-            <section class="hw6-section half-screen-width">
+            <section class="hw6-section adaptable-width">
                 <h3>Phone Number</h3>
                 <form id="myform">
                     <table>
@@ -24,7 +24,7 @@ $(document).ready(function() {
                     </div>
                 </form>
             </section>
-            <section class="hw6-section half-screen-width">
+            <section class="hw6-section adaptable-width">
                 <h3>Result</h3>
                 <textarea class="black-background-white-text thin-white-border" rows="3" cols="40" name="result" id="result"></textarea>
             </section>
