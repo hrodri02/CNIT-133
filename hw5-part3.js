@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     function addUniquePageContent() {
         document.getElementsByClassName("content-container")[0].innerHTML += `
-            <section class="hw5-section adaptable-width">
+            <section class="hw5-section">
                 <h3>Enter the full name of a state or the two-letter abbreviation</h3>
                 <form name="myform">
                     <table>
@@ -24,7 +24,7 @@ $(document).ready(function() {
                     </div>
                 </form>
             </section>
-            <section class="hw5-section adaptable-width">
+            <section class="hw5-section">
                 <h3>Results</h3>
                 <textarea class="black-background-white-text thin-white-border" rows="4" cols="60" name="result" id="result"></textarea>
             </section>
