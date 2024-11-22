@@ -13,7 +13,7 @@ $(document).ready(function() {
                                 <label for="long-text">Enter some text:</label>
                             </td>
                             <td>
-                                <textarea class="black-background-white-text thin-white-border" rows="8" cols="50" name="input-text" id="long-text" placeholder="Enter some text"></textarea>
+                                <textarea class="black-background-white-text thin-white-border" rows="8" name="input-text" id="long-text" placeholder="Enter some text"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -35,7 +35,7 @@ $(document).ready(function() {
             </section>
             <section class="hw6-section adaptable-width">
                 <h3>Results</h3>
-                <textarea class="black-background-white-text thin-white-border" rows="6" cols="50" name="result" id="result"></textarea>
+                <textarea class="black-background-white-text thin-white-border result-textarea" rows="6" name="result" id="result"></textarea>
             </section>
         `;
     }

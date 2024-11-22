@@ -357,6 +357,18 @@ div button {
     align-items: center;
 }
 
+.hw6-section table {
+    width: 100%;
+}
+
+table textarea {
+    width: 100%;
+}
+
+.result-textarea {
+    width: 70%;
+}
+
 #searchCharacterForm {
     width: 80%;
 }
