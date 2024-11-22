@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     function addUniquePageContent() {
         document.getElementsByClassName("content-container")[0].innerHTML += `
-            <section class="hw6-section adaptable-width">
+            <section class="hw6-section">
                 <h3>Input Text and Character</h3>
                 <form class="align-center" id="searchCharacterForm">
                     <table>
@@ -33,7 +33,7 @@ $(document).ready(function() {
                     </div>
                 </form>
             </section>
-            <section class="hw6-section adaptable-width">
+            <section class="hw6-section">
                 <h3>Results</h3>
                 <textarea class="black-background-white-text thin-white-border result-textarea" rows="6" name="result" id="result"></textarea>
             </section>
