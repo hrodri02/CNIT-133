@@ -7,22 +7,25 @@ $(document).ready(function() {
             <main>
                 <h3>Dropdown Menus</h3>
                 <ul class="horizontal-nav-bar">
-                    <li class="dropdown"><a class="dropbtn" href="hw2.html">Homework 2</a>
+                    <li class="dropdown"><a class="dropbtn" href="#">Homework 2</a>
                         <ul class="submenu fallback">
+                            <li><a href="hw2.html">Home</a></li>
                             <li><a href="hw2-part1.html">Part 1</a></li>
                             <li><a href="hw2-part2.html">Part 2</a></li>
                             <li><a href="hw2-part3.html">Part 3</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a class="dropbtn" href="hw3.html">Homework 3</a>
+                    <li class="dropdown"><a class="dropbtn" href="#">Homework 3</a>
                     <ul class="submenu fallback">
+                            <li><a href="hw3.html">Home</a></li>
                             <li><a href="hw3-part1.html">Part 1</a></li>
                             <li><a href="hw3-part2.html">Part 2</a></li>
                             <li><a href="hw3-part3.html">Part 3</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a class="dropbtn" href="hw4.html">Homework 4</a>
+                    <li class="dropdown"><a class="dropbtn" href="#">Homework 4</a>
                     <ul class="submenu fallback">
+                            <li><a href="hw4.html">Home</a></li>
                             <li><a href="hw4-part1.html">Part 1</a></li>
                             <li><a href="hw4-part2.html">Part 2</a></li>
                             <li><a href="hw4-part3.html">Part 3</a></li>
