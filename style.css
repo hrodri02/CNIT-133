@@ -69,19 +69,19 @@ footer {
     text-decoration: none;
 }
 
-#hw-list a:link, .vertical-nav-bar a:link {
+#hw-list a:link, .vertical-nav-bar a:link, .description a:link {
     color: #ccc;
 }
   
-#hw-list a:visited, .vertical-nav-bar a:visited {
+#hw-list a:visited, .vertical-nav-bar a:visited, .description a:visited {
     color: pink;
 }
   
-#hw-list a:hover, .vertical-nav-bar a:hover {
+#hw-list a:hover, .vertical-nav-bar a:hover, .description a:hover {
     color: red;
 }
   
-#hw-list a:active, .vertical-nav-bar a:active {
+#hw-list a:active, .vertical-nav-bar a:active, .description a:active {
     color: yellow;
 }
 
@@ -450,6 +450,15 @@ li.dropdown { display: inline-block; position: relative; }
 
 .dropdown:hover .fallback {
     display: block;
+}
+
+.description {
+    padding: 0.5em;
+    background-color: #222;
+}
+
+main h4 {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 640px) {
