@@ -35,4 +35,15 @@ $(document).ready(function() {
 			document.myform.time.value = data;
 		});
 	});
+
+	$("#zipcode").change(function() {
+		const zip = $("#zipcode").val();
+		$.get("getCityState.php", {"zip": zip}, function(data) {
+			const parts = data.split(",");
+			const city = parts[0];
+			const state = parts[1].trimStart();
+			document.locationForm.city.value = city;
+			document.locationForm.state.value = state;
+		});
+	});
 });
