@@ -57,7 +57,6 @@ h2 {
 section {
     flex-grow: 1;
     flex-basis: 0;
-    overflow: auto;
     color: #ccc;
 }
 
@@ -69,19 +68,19 @@ footer {
     text-decoration: none;
 }
 
-#hw-list a:link, .vertical-nav-bar a:link, .description a:link {
+#hw-list a:link, .vertical-nav-bar a:link, .description a:link, .hw8-section a:link {
     color: #ccc;
 }
   
-#hw-list a:visited, .vertical-nav-bar a:visited, .description a:visited {
+#hw-list a:visited, .vertical-nav-bar a:visited, .description a:visited, .hw8-section a:visited {
     color: pink;
 }
   
-#hw-list a:hover, .vertical-nav-bar a:hover, .description a:hover {
+#hw-list a:hover, .vertical-nav-bar a:hover, .description a:hover, .hw8-section a:hover {
     color: red;
 }
   
-#hw-list a:active, .vertical-nav-bar a:active, .description a:active {
+#hw-list a:active, .vertical-nav-bar a:active, .description a:active, .hw8-section a:active {
     color: yellow;
 }
 
@@ -132,11 +131,15 @@ main img {
     align-items: center;
 }
 
-#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section, .hw6-section, main, .hw7-section {
+#hw2-section, #hw3-section, .hw3-part2-section, #hw4-section, .hw5-section, .hw6-section, main, .hw7-section, .hw8-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#api-description {
+    justify-content: start;
 }
 
 #hw2-part3-section {
@@ -459,6 +462,10 @@ li.dropdown { display: inline-block; position: relative; }
 
 main h4 {
     cursor: pointer;
+}
+
+.hw8-section {
+    padding: 0 2em;
 }
 
 @media screen and (max-width: 640px) {

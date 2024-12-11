@@ -18,7 +18,7 @@ const templateHTML = `
         <a href='hw5.html'>HW 5</a>
         <a href='hw6.html'>HW 6</a>
         <a href='hw7.html'>HW 7</a>
-        <a href='#'>HW 8</a>
+        <a href='hw8.html'>HW 8</a>
     </div>
 </div>
 `;
